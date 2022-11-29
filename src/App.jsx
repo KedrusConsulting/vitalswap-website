@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Homepage from "./pages/Homepage";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
