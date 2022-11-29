@@ -1,8 +1,22 @@
+.hero {
+  &__terms {
+    h1 {
+      margin-bottom: 1.2rem;
+    }
+  }
+}
+
 .text-block {
   padding: 1.2rem;
 
   &:not(:last-child) {
     margin-bottom: 2.4rem;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
   }
 
   &__heading {
