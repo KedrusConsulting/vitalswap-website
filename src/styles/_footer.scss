@@ -1,0 +1,62 @@
+.footer {
+  padding: 8rem 0;
+  color: #fff;
+  background-color: var(--vs-blue);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 6.4rem;
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: 4rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  a:link,
+  a:visited {
+    font-weight: 300;
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  &__useful-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__social-links {
+    margin-bottom: 2.4rem;
+
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+
+  &__contact {
+    p {
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+
+      // &:not(:last-child) {
+      //   margin-bottom: 0;
+      // }
+    }
+  }
+}

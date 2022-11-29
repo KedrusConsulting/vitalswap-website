@@ -1,0 +1,57 @@
+@import "./main.scss";
+
+:root {
+  --bg: #f9f9f9;
+  --white: #fff;
+  --text-secondary: #8f97ad;
+  --orange-300-base: #ffab00;
+  --black-300: #8f97ad;
+  --neutral-grey: #ebeff2;
+  --vs-blue: #04396d;
+  --blue-300: #ceddec;
+  --text-primary: #343947;
+  --grey-200: #ebeff2;
+  --black-500-base: #0b0c0f;
+  --yellow-400: #ffb805;
+  --blue-500: #04396d;
+  --white: #fff;
+  --blue-400: #0875e0;
+  --black-400: #343947;
+  --blue-100: #d9ebfe;
+  --black-100: #e3e5eb;
+  --grey-100: #f9fafb;
+  --green-300-base: #0b8d78;
+  --green-100: #e7f4f1;
+  --neutrals-white: #fff;
+  --green-500: #075548;
+  --main-navy-blue: #011625;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: $font-default;
+  font-family: "Poppins", sans-serif;
+  line-height: 2.4rem;
+  color: var(--text-primary);
+  background-color: var(--bg);
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+img {
+  max-width: 100%;
+}

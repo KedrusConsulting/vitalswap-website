@@ -1,0 +1,594 @@
+.header {
+  background-color: var(--neutral-grey);
+  padding-bottom: 8rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+  grid-template-rows: repeat(2, min-content);
+  gap: 4.8rem;
+  max-width: 114rem;
+  margin: 0 auto;
+  align-items: center;
+
+  &__text-box {
+    grid-row: 1 / 2;
+
+    h1 {
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      max-width: 34.2rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__img-box {
+    display: flex;
+    justify-items: center;
+    position: relative;
+    padding: 5vh 0;
+    grid-row: 1 / 2;
+
+    .layer-glow {
+      position: absolute;
+      width: 69.9rem;
+      height: 40rem;
+      top: 0;
+      right: 0;
+
+      background-image: linear-gradient(
+        123.59deg,
+        rgba(57, 118, 193, 0.32) -5.11%,
+        rgba(247, 146, 29, 0.37) 64.02%
+      );
+      filter: blur(240px);
+      z-index: 2;
+    }
+
+    img {
+      display: block;
+      position: relative;
+      width: 75%;
+      margin: 0 auto;
+      z-index: 3;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    right: -6.9rem;
+    bottom: -8rem;
+    width: 76rem;
+    height: 56rem;
+  }
+
+  &__cta {
+    display: flex;
+
+    & > *:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+
+    a {
+      display: block;
+      width: 14rem;
+
+      img {
+        height: 4.8rem;
+      }
+    }
+  }
+}
+
+.powered-by {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  max-width: 100rem;
+  margin: 0 auto;
+  margin-top: 6.4rem;
+
+  h4 {
+    font-weight: 500;
+    line-height: 1.33;
+    letter-spacing: 0.167em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  &-logos {
+    @include flex(space-evenly, center);
+
+    & > *:not(:last-child) {
+      margin-right: 6.4rem;
+    }
+  }
+
+  &-logo {
+    width: 120px;
+    height: 4rem;
+    object-fit: contain;
+  }
+}
+
+/*************************************************
+ Steps Section
+*/
+
+.steps {
+  &__section {
+    padding: 8rem 0;
+  }
+
+  &__caption {
+    max-width: 64rem;
+    margin-bottom: 4.8rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+  }
+
+  &__text-box {
+  }
+
+  &__card {
+    background-color: var(--neutrals-white);
+    padding: 3.2rem;
+    max-width: 46rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+    h4 {
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    &--active {
+      background-color: var(--neutral-grey);
+
+      p {
+        color: var(--text-primary);
+      }
+    }
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__img {
+    &-box {
+      position: relative;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &--1,
+    &--2,
+    &--3 {
+      padding: 3.2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include flex(center, center);
+    }
+
+    &--1 {
+      background-color: #fff8e6;
+    }
+
+    &--2 {
+      background-color: #ffd469;
+    }
+
+    &--3 {
+      background-color: #ffb805;
+    }
+
+    &--active {
+      z-index: 4;
+    }
+  }
+}
+
+/*************************************************
+ Exchange & Secure process Section
+*/
+
+.get-exchange {
+  padding: 8rem 0;
+}
+
+.exchange {
+  padding: 10rem;
+  background-color: var(--grey-200);
+  border-radius: 0.8rem;
+  margin-bottom: 12rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__text-box {
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+
+.process {
+  &__caption {
+    text-align: center;
+    max-width: 57rem;
+    margin: 0 auto 5rem;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4.8rem;
+
+    .feature {
+      padding: 2.4rem 1.6rem;
+
+      h4 {
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        color: var(--text-secondary);
+      }
+    }
+  }
+
+  &__svg {
+    margin-bottom: 2.8rem;
+  }
+}
+
+/*************************************************
+ Merchant Section
+*/
+
+.merchant {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 4.8rem;
+
+  padding: 8rem 4rem;
+  border-radius: 1.6rem;
+  background-color: var(--vs-blue);
+
+  &__section {
+    padding: 4rem 0 8rem;
+  }
+
+  &__text-box {
+    color: #fff;
+
+    h2 {
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      max-width: 51rem;
+      font-weight: 300;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem 4rem;
+    align-items: end;
+
+    figure:nth-child(1),
+    figure:nth-child(3) {
+      justify-self: end;
+    }
+
+    figure:nth-child(2n + 2) {
+      transform: translateY(24px);
+    }
+  }
+}
+
+/*************************************************
+ Features Section
+*/
+
+.features {
+  &__section {
+    padding: 4rem 0 8rem;
+  }
+
+  &__caption {
+    max-width: 60rem;
+    margin: 0 auto 6.4rem;
+    text-align: center;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3.2rem;
+  }
+
+  &__card {
+    position: relative;
+    padding: 5.4rem 2.8rem;
+    background-color: var(--blue-300);
+    border-radius: 1.6rem;
+    overflow: hidden;
+
+    & > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    p {
+      color: var(--text-primary);
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    z-index: 1;
+
+    &--1 {
+      right: -11rem;
+      top: -5rem;
+      transform: rotate(-9deg);
+    }
+
+    &--2 {
+      right: -18rem;
+      top: -1rem;
+      transform: rotate(-82.38deg);
+    }
+
+    &--3 {
+      right: -16rem;
+      top: 6rem;
+      transform: rotate(16.62deg);
+    }
+  }
+}
+
+/*************************************************
+ Testimonials Section
+*/
+
+.testimonials {
+  &__section {
+    padding: 8rem 0 12rem;
+  }
+
+  &__caption {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6.4rem 2.4rem;
+  }
+
+  &__card {
+    background-color: #fff;
+    box-shadow: 0.2rem 0.4rem 1.2rem rgba(4, 57, 109, 0.06);
+    padding: 1.6rem;
+    border-radius: 0.8rem;
+    text-align: center;
+
+    h4 {
+      color: var(--text-secondary);
+      margin-top: -2.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__avatar {
+    display: block;
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    position: relative;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/*************************************************
+ Blog Section
+*/
+
+.blog {
+  &__section {
+    padding: 8rem 0;
+  }
+
+  &__caption {
+    @include flex(space-between, center);
+    margin-bottom: 4.8rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+  }
+
+  &__card {
+  }
+
+  &__img {
+    max-width: 39.7rem;
+    height: 21.8rem;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    margin-bottom: 2.4rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    .heading--teritary {
+      font-size: 2.2rem;
+      font-weight: 500;
+      line-height: 3rem;
+      letter-spacing: 0;
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-bottom: 2.4rem;
+    }
+
+    .btn.btn--white-outline {
+      max-width: 20.4rem;
+    }
+  }
+}
+
+/*************************************************
+ FAQ Section
+*/
+
+.faq {
+  &__section {
+    padding: 8rem 0 12rem;
+  }
+
+  &__caption {
+    text-align: center;
+    margin-bottom: 6.4rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 55.8rem));
+    gap: 2.4rem;
+
+    // & > *:not(even) {
+    //   margin-right: 2.4rem;
+    // }
+  }
+
+  &__faq {
+    background-color: #fff;
+    padding: 3.2rem;
+    padding-bottom: 0;
+
+    border-radius: 0.8rem;
+    // width: calc((100% - 2.4rem) / 2);
+    align-self: start;
+  }
+
+  &__title {
+    @include flex(space-between, center);
+    margin-bottom: 3.2rem;
+    cursor: pointer;
+
+    h5 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+
+  &__body {
+    height: 0;
+    transition: height 0.5s ease-out;
+    overflow: hidden;
+
+    p {
+      font-weight: 300;
+      color: var(--text-secondary);
+    }
+  }
+
+  &__faq--is-open &__body {
+    height: 8.7rem;
+    margin-bottom: 3.2rem;
+  }
+
+  &__faq--is-open &__title {
+    margin-bottom: 3.2rem;
+  }
+}
+
+/*************************************************
+ Marketplace Section
+*/
+
+.marketplace {
+  &__section {
+    background-image: url(../../src/assets/marketplace-bg.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    max-height: 44.5rem;
+    padding: 8rem 0;
+    overflow: hidden;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+  }
+
+  &__text-box {
+    h3 {
+      font-weight: 500;
+      max-width: 44rem;
+      margin-bottom: 1.2rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 42rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__img-box {
+    justify-self: center;
+  }
+}

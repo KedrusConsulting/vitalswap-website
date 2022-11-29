@@ -1,0 +1,47 @@
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.4rem 2rem;
+}
+
+.btn {
+  &--primary {
+    color: var(--black-500-base);
+    background-color: var(--yellow-400);
+  }
+
+  &--white {
+    color: var(--black-500-base);
+    background-color: #fff;
+
+    &-outline,
+    &-outline:link,
+    &-outline:visited {
+      font-weight: 400;
+      @include flex(center, center);
+      color: var(--vs-blue);
+      background-color: #fff;
+      border: 1px solid var(--vs-blue);
+      border-radius: 3rem;
+
+      padding: 1.2rem 3.2rem;
+
+      & > *:not(:last-child) {
+        margin-right: 0.8rem;
+        transition: all 0.2s;
+      }
+    }
+
+    &-outline:hover {
+      & > *:not(:last-child) {
+        margin-right: 1.6rem;
+      }
+    }
+  }
+}
