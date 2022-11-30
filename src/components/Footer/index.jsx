@@ -27,11 +27,11 @@ function Footer() {
             </p>
 
             <div className="footer__useful-links">
-              <Link to="#" className="footer__link">
+              <Link to="/terms" className="footer__link">
                 Terms of Service
               </Link>
 
-              <Link to="#" className="footer__link">
+              <Link to="/privacy" className="footer__link">
                 Privacy POlicy
               </Link>
             </div>
