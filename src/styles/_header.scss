@@ -18,8 +18,13 @@
   align-items: center;
 
   &--terms {
-    max-width: 81.8rem;
+    max-width: 92rem;
     margin: 10vh auto 0;
+
+    h1 {
+      max-width: 65.1rem;
+      margin-bottom: 1.6rem;
+    }
 
     p {
       font-weight: 300;
@@ -29,10 +34,6 @@
 
   &__text-box {
     grid-row: 1 / 2;
-
-    h1 {
-      margin-bottom: 1.6rem;
-    }
 
     p {
       max-width: 34.2rem;

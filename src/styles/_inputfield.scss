@@ -1,0 +1,58 @@
+.inputfield {
+  &__group {
+    border: none;
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  &__label,
+  &__input {
+    font-family: "Poppins", sans-serif;
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  &__input,
+  &__description,
+  &__select {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    border: 1.5px solid transparent;
+    box-shadow: 0 0 0 0.15rem rgb(227, 229, 235, 70%);
+    background-color: var(--grey-100);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    color: var(--text-primary);
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+      border: 1.5px solid transparent;
+      box-shadow: 0 0 0 0.15rem rgb(8, 117, 224, 70%);
+    }
+
+    &::placeholder {
+      color: hsla(224, 15%, 81%, 1);
+    }
+  }
+
+  &__description {
+    height: 150px;
+  }
+
+  &__btn {
+    max-width: 20rem;
+    border-radius: 30rem;
+    margin-top: 2.4rem;
+  }
+}
