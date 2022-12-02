@@ -25,6 +25,10 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -1.92px;
+
+    // @include respond(xs-phone) {
+    //   font-size: 4rem;
+    // }
   }
 
   &--tertiary {
