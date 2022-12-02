@@ -1,6 +1,11 @@
 .container {
   max-width: 114rem;
   margin: 0 auto;
+  transition: all 0.4s;
+
+  @include respond(md-laptop) {
+    padding: 0 2.4rem;
+  }
 }
 
 .wrapper {

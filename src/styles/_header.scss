@@ -17,6 +17,25 @@
   margin: 0 auto;
   align-items: center;
 
+  @include respond(md-laptop) {
+    padding: 0 2.4rem;
+    grid-template-columns: 45fr 55fr;
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content);
+    margin-top: 10vh;
+    // overflow-x: hidden;
+  }
+
+  @include respond(md-phone) {
+    background-image: url(../assets/hero-svg.svg);
+    background-size: contain;
+    background-position: 0px 120px;
+    background-repeat: no-repeat;
+  }
+
   &--terms {
     max-width: 92rem;
     margin: 10vh auto 0;
@@ -35,9 +54,32 @@
   &__text-box {
     grid-row: 1 / 2;
 
+    @include respond(tablet) {
+      text-align: center;
+    }
+
+    @include respond(tablet) {
+      grid-column: 1 / -1;
+    }
+
+    h1 {
+      margin-bottom: 1.6rem;
+
+      @include respond(tablet) {
+        max-width: 60rem;
+        margin: 0 auto 1.6rem;
+        text-align: center;
+      }
+    }
+
     p {
       max-width: 34.2rem;
       margin-bottom: 2.4rem;
+
+      @include respond(tablet) {
+        font-size: 1.7rem;
+        margin: 0 auto 2.4rem;
+      }
     }
   }
 
@@ -47,6 +89,12 @@
     position: relative;
     padding: 5vh 0;
     grid-row: 1 / 2;
+    z-index: 3;
+
+    @include respond(tablet) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
 
     .layer-glow {
       position: absolute;
@@ -54,6 +102,10 @@
       height: 40rem;
       top: 0;
       right: 0;
+
+      @include respond(tablet) {
+        display: none;
+      }
 
       background-image: linear-gradient(
         123.59deg,
@@ -70,30 +122,115 @@
       width: 75%;
       margin: 0 auto;
       z-index: 3;
+      transition: all 0.4s;
+
+      @include respond(lg-laptop) {
+        left: -3rem;
+      }
+
+      @include respond(md-laptop) {
+        width: 70%;
+      }
+
+      @include respond(tablet) {
+        left: 0;
+        max-width: 40rem;
+      }
+
+      @include respond(phone) {
+        left: 0;
+        width: 80%;
+      }
     }
   }
 
   &__svg {
     position: absolute;
-    right: -6.9rem;
+    right: -5.9rem;
     bottom: -8rem;
-    width: 76rem;
+    width: 70rem;
     height: 56rem;
+    transition: all 0.4s;
+
+    @include respond(lg-laptop) {
+      right: -1.9rem;
+
+      width: 55vw;
+      height: 52rem;
+    }
+
+    @include respond(md-laptop) {
+      right: -1rem;
+      max-width: 60rem;
+    }
+
+    @include respond(tablet) {
+      width: 157rem;
+      max-width: 60rem;
+      margin: 0 auto;
+      height: 56rem;
+      right: 0;
+      left: 8.72rem;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    @include respond(md-phone) {
+      opacity: 0.4;
+      top: -10rem;
+      right: 0;
+      left: 0;
+      transform: scale(1.1) rotate(-23deg);
+    }
+
+    @include respond(sm-phone) {
+      top: -18rem;
+      transform: scale(0.95) rotate(-25deg) translateX(-4rem);
+    }
+
+    @include respond(xs-phone) {
+      top: -20rem;
+      transform: scale(1) rotate(-25deg) translateX(-5rem);
+    }
   }
 
   &__cta {
     display: flex;
+    position: relative;
+    z-index: 10;
 
     & > *:not(:last-child) {
       margin-right: 1.6rem;
+    }
+
+    @include respond(tablet) {
+      justify-content: center;
+    }
+
+    @include respond(phone) {
+      & > *:not(:last-child) {
+        margin-right: 0.8rem;
+      }
     }
 
     a {
       display: block;
       width: 14rem;
 
+      @include respond(phone) {
+        width: 108px;
+        height: 36px;
+        object-fit: contain;
+      }
+
       img {
         height: 4.8rem;
+
+        @include respond(phone) {
+          object-fit: contain;
+        }
       }
     }
   }

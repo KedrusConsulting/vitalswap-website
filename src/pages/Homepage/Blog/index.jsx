@@ -33,22 +33,22 @@ function Blog() {
         <div className="blog__grid">
           <BlogCard
             route={"#"}
-            title="Introducing Swap by Vitalswap: A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new...."
+            title="Introducing Swap by Vitalswap: A new way of Exchanging Money A new way of Exchanging Money"
+            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new With funds in your wallet, you can swap it for another currency with a click of a button and your new"
             imageUrl={blog_img}
           />
 
           <BlogCard
             route={"#"}
             title="Introducing Swap by Vitalswap: A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new...."
+            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new"
             imageUrl={blog_img}
           />
 
           <BlogCard
             route={"#"}
             title="Introducing Swap by Vitalswap: A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new...."
+            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new"
             imageUrl={blog_img}
           />
         </div>

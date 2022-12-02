@@ -16,7 +16,9 @@ function Hero() {
   return (
     <div className="hero">
       <div className="hero__text-box">
-        <h1 className="heading--primary">The easy way to send your money</h1>
+        <h1 className="heading--primary">
+          The Easy way to Swap & Send your money.
+        </h1>
         <p className="text__lg">
           Send money easily to your friends and family in few clicks
         </p>

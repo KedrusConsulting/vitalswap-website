@@ -3,3 +3,69 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin textLimit($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin respond($bp) {
+  @if ($bp == xs-phone) {
+    @media only screen and (max-width: 20em) {
+      @content;
+    }
+  }
+
+  @if ($bp == sm-phone) {
+    @media only screen and (max-width: 29em) {
+      @content;
+    }
+  }
+
+  @if ($bp == md-phone) {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if ($bp == phone) {
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  }
+
+  // 960px device width and Below
+
+  @if ($bp == tablet) {
+    @media only screen and (max-width: 60em) {
+      @content;
+    }
+  }
+
+  // 1100px device width and Below
+
+  @if ($bp == lg-tablet) {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+
+  // 1200px device width and Below
+
+  @if ($bp == md-laptop) {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  // 1300px device width and Below
+
+  @if ($bp == lg-laptop) {
+    @media only screen and (max-width: 81.25em) {
+      @content;
+    }
+  }
+}

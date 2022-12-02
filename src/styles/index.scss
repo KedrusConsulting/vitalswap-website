@@ -31,10 +31,17 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
-  font-size: 10px;
+  // font-size: 10px;
+  font-size: 62.5%; // 10px / 16px
+
+  @include respond(lg-tablet) {
+    font-size: 56.25%;
+  }
 }
 
 body {
@@ -43,6 +50,11 @@ body {
   line-height: 2.4rem;
   color: var(--text-primary);
   background-color: var(--bg);
+
+  @include respond(phone) {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
 }
 
 ::-webkit-inner-spin-button {

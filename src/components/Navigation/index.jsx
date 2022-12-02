@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo";
 import NavLink from "../NavLink";
 
+import Hamburger from "hamburger-react";
+
 function Navigation() {
   return (
     <nav className="nav">
@@ -20,7 +22,7 @@ function Navigation() {
             <NavLink route="#" label="Contact Us" />
           </ul>
 
-          <Link to="#" className="btn btn--primary">
+          <Link to="#" className="navbar__cta btn btn--primary">
             Download App
           </Link>
         </div>

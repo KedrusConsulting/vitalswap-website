@@ -1,10 +1,21 @@
 .nav {
   margin-bottom: 1.6rem;
+
+  @include respond(tablet) {
+    margin: 0;
+    background-color: #f9f9f9;
+  }
 }
 
 .navbar {
   @include flex(space-between, center);
   padding: 1.6rem 0;
+
+  &__logo {
+    @include respond(md-phone) {
+      width: 140px;
+    }
+  }
 
   &__list {
     list-style: none;
@@ -13,8 +24,15 @@
     & > *:not(:last-child) {
       margin-right: $spacing-4;
     }
+
+    @include respond(tablet) {
+      display: none;
+    }
   }
 
   &__cta {
+    @include respond(tablet) {
+      display: none !important;
+    }
   }
 }
