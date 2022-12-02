@@ -6,6 +6,10 @@
     background-color: var(--neutral-grey);
     padding-bottom: 4.8rem;
   }
+
+  &--signup {
+    padding-bottom: 4.8rem;
+  }
 }
 
 .hero {
@@ -40,14 +44,31 @@
     max-width: 92rem;
     margin: 10vh auto 0;
 
-    h1 {
+    @include respond(md-laptop) {
+      padding: 0 2.4rem;
+    }
+
+    .heading--primary {
       max-width: 65.1rem;
       margin-bottom: 1.6rem;
+
+      @include respond(tablet) {
+        font-weight: 500;
+      }
+
+      @include respond(md-phone) {
+        font-size: 3.6rem;
+        margin-bottom: 0.8rem;
+      }
     }
 
     p {
       font-weight: 300;
       color: var(--text-secondary);
+
+      @include respond(md-phone) {
+        font-size: 1.5rem;
+      }
     }
   }
 

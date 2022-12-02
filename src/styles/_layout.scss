@@ -11,8 +11,16 @@
 .wrapper {
   max-width: 75rem;
   margin: 0 auto;
+
+  @include respond(md-laptop) {
+    padding: 0 2.4rem;
+  }
 }
 
 .main--terms {
   padding: 8rem 0;
+
+  @include respond(md-phone) {
+    padding: 4rem 0 6.4rem;
+  }
 }

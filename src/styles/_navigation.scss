@@ -13,7 +13,7 @@
 
   &__logo {
     @include respond(md-phone) {
-      width: 140px;
+      width: 120px;
     }
   }
 

@@ -46,7 +46,7 @@ function SignUp() {
 
   return (
     <>
-      <div className="header">
+      <div className="header header--signup">
         <Navigation />
 
         <div className="hero--terms">

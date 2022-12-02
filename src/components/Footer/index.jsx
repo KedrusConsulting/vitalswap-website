@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import footer_logo from "../../assets/vitalswap-logo2.png";
 
@@ -9,8 +9,9 @@ import instagram_icon from "../../assets/instagram.svg";
 import facebook_icon from "../../assets/facebook.svg";
 
 function Footer() {
+  const { pathname } = useLocation();
   return (
-    <footer className="footer">
+    <footer className={`footer ${pathname === "/" ? "footer__home" : ""}`}>
       <div className="container">
         <div className="footer__grid">
           <div className="footer__logo">

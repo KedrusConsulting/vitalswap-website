@@ -3,14 +3,16 @@
   color: #fff;
   background-color: var(--vs-blue);
 
-  @include respond(sm-phone) {
-    margin-top: -15vh;
-    position: relative;
-    z-index: 5;
-  }
+  &__home {
+    @include respond(sm-phone) {
+      margin-top: -15vh;
+      position: relative;
+      z-index: 5;
+    }
 
-  @include respond(xs-phone) {
-    margin-top: -25vh;
+    @include respond(xs-phone) {
+      margin-top: -25vh;
+    }
   }
 
   &__logo {
