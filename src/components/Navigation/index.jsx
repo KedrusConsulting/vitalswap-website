@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo";
 import NavLink from "../NavLink";
 
-import Hamburger from "hamburger-react"; 
- 
+import Hamburger from "hamburger-react";
 
 function Navigation() {
   return (
@@ -23,9 +22,12 @@ function Navigation() {
             <NavLink route="#" label="Contact Us" />
           </ul>
 
-          <Link to="#" className="navbar__cta btn btn--primary">
+          <a
+            href="https://vitalswap.com/download.html"
+            className="navbar__cta btn btn--primary"
+          >
             Download App
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

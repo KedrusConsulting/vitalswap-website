@@ -22,7 +22,7 @@ function Merchant() {
               payments from Africa in local currency.
             </p>
 
-            <Link to="" className="btn btn--white">
+            <Link to="/signup" className="btn btn--white">
               Get Started for Business
             </Link>
           </div>

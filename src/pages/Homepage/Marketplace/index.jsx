@@ -38,13 +38,19 @@ function Marketplace() {
             </p>
 
             <div className="hero__cta">
-              <Link to="#">
+              <a
+                target="_blank"
+                href="https://apps.apple.com/lb/app/swap-by-vitalswap/id1595742241"
+              >
                 <img src={apple_store} alt="Apple store cta" />
-              </Link>
+              </a>
 
-              <Link to="#">
+              <a
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.swap.swap&hl=en&gl=US&pli=1"
+              >
                 <img src={google_play} alt="Google play cta" />
-              </Link>
+              </a>
             </div>
           </div>
 

@@ -42,21 +42,37 @@ function Footer() {
             <h5 className="footer__heading">Get Connected</h5>
 
             <div className="footer__social-links">
-              <Link to="#" className="footer__link">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/vitalswap"
+                className="footer__link"
+              >
                 <img src={linkedin_icon} alt="Linkedin Icon" />
-              </Link>
+              </a>
 
-              <Link to="#" className="footer__link">
+              <a
+                target="_blank"
+                href="https://twitter.com/vitalswap"
+                className="footer__link"
+              >
                 <img src={twitter_icon} alt="Twitter Icon" />
-              </Link>
+              </a>
 
-              <Link to="#" className="footer__link">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/vitalswap"
+                className="footer__link"
+              >
                 <img src={instagram_icon} alt="Instagram Icon" />
-              </Link>
+              </a>
 
-              <Link to="#" className="footer__link">
+              <a
+                target="_blank"
+                href="https://web.facebook.com/Vitalswap"
+                className="footer__link"
+              >
                 <img src={facebook_icon} alt="Facebook Icon" />
-              </Link>
+              </a>
             </div>
 
             <p>
