@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 
 function Blog() {
   return (
-    <section className="blog__section">
+    <section className="blog__section" id="blog">
       <div className="container">
-        <div className="blog__caption">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="blog__caption"
+        >
           <h2 className="heading--secondary">Read more about our product</h2>
           <Link to="#" className="btn btn--white-outline">
             <span>View Blog</span>

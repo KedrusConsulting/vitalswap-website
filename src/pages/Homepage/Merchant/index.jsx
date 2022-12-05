@@ -10,14 +10,14 @@ function Merchant() {
   return (
     <section className="merchant__section">
       <div className="container">
-        <div className="merchant">
+        <div data-aos="fade-up" data-aos-duration="2000" className="merchant">
           <div className="merchant__text-box">
             <h2 className="heading--secondary">
               Do you receive payments as a foreign merchants from Africa?
             </h2>
 
             <p>
-              Are you loosing revenue due exchange rates when you receive
+              Are you loosing revenue due to exchange rates when you receive
               payments from Africa? Get vitalswap for business and receive
               payments from Africa in local currency.
             </p>
@@ -27,7 +27,11 @@ function Merchant() {
             </Link>
           </div>
 
-          <div className="merchant__logos">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="merchant__logos"
+          >
             <figure>
               <img src={copart_logo} alt="Copart Logo" />
             </figure>

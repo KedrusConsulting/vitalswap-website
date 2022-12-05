@@ -3,14 +3,18 @@ import React from "react";
 function Process() {
   return (
     <div className="process">
-      <div className="process__caption">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        className="process__caption"
+      >
         <h3 className="heading--tertiary">
           Safe & Secure Process to swap your Money
         </h3>
       </div>
 
       <div className="process__features">
-        <div className="feature">
+        <div data-aos="fade-up" data-aos-duration="2000" className="feature">
           <svg
             className="process__svg"
             width="56"
@@ -61,7 +65,7 @@ function Process() {
           <p>All transactions are carefully monitored to ensure zero fraud.</p>
         </div>
 
-        <div className="feature">
+        <div data-aos="fade-up" data-aos-duration="2000" className="feature">
           <svg
             className="process__svg"
             width="56"
@@ -96,7 +100,7 @@ function Process() {
           <p>Receive funds in your local account within minutes.</p>
         </div>
 
-        <div className="feature">
+        <div data-aos="fade-up" data-aos-duration="2000" className="feature">
           <svg
             className="process__svg"
             width="56"

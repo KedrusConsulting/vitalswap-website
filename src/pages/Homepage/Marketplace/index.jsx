@@ -27,7 +27,11 @@ function Marketplace() {
       </div>
       <div className="container">
         <div className="marketplace__grid">
-          <div className="marketplace__text-box">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="marketplace__text-box"
+          >
             <h3 className="heading--tertiary">
               One Stop Marketplace for your Best rate
             </h3>
@@ -56,6 +60,9 @@ function Marketplace() {
 
           <div className="marketplace__img-box">
             <img
+              data-aos="fade-down"
+              data-aos-duration="2000"
+              data-aos-delay="100"
               className="marketplace__img"
               src={app_screen_1}
               alt="App screen"

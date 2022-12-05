@@ -11,7 +11,10 @@ import facebook_icon from "../../assets/facebook.svg";
 function Footer() {
   const { pathname } = useLocation();
   return (
-    <footer className={`footer ${pathname === "/" ? "footer__home" : ""}`}>
+    <footer
+      className={`footer ${pathname === "/" ? "footer__home" : ""}`}
+      id="contact"
+    >
       <div className="container">
         <div className="footer__grid">
           <div className="footer__logo">

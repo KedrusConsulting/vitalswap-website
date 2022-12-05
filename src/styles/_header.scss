@@ -9,7 +9,10 @@
 
   &--signup {
     padding-bottom: 4.8rem;
-    text-align: center;
+
+    @include respond(md-phone) {
+      text-align: center;
+    }
 
     .heading--secondary {
       @include respond(md-phone) {
@@ -62,7 +65,7 @@
       padding: 0 2.4rem;
     }
 
-    .heading--primary {
+    .heading--secondary {
       max-width: 65.1rem;
       margin-bottom: 1.6rem;
 

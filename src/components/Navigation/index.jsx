@@ -15,11 +15,11 @@ function Navigation() {
           </div>
 
           <ul className="navbar__list">
-            <NavLink route="#" label="How it Works" />
-            <NavLink route="#" label="Our Rates" />
-            <NavLink route="#" label="Blog" />
-            <NavLink route="#" label="FAQ" />
-            <NavLink route="#" label="Contact Us" />
+            <NavLink route="#how-it-works" label="How it Works" />
+            <NavLink route="#rates" label="Our Rates" />
+            <NavLink route="#blog" label="Blog" />
+            <NavLink route="#faq" label="FAQ" />
+            <NavLink route="#contact" label="Contact Us" />
           </ul>
 
           <a

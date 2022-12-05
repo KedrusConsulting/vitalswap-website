@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function BlogCard({ route, title, summary, imageUrl }) {
   return (
-    <article className="blog__card">
+    <article data-aos="fade-up" data-aos-duration="2000" className="blog__card">
       <div className="blog__img">
         <img src={imageUrl} alt={title} />
       </div>

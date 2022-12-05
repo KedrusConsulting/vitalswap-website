@@ -14,7 +14,11 @@ function FAQCard({ title, body }) {
   }, [open]);
 
   return (
-    <div className={`faq__faq faq__faq--${open ? "is-open" : ""}`}>
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className={`faq__faq faq__faq--${open ? "is-open" : ""}`}
+    >
       <div className="faq__title" onClick={() => setOpen((prev) => !prev)}>
         <h5>{title}</h5>
 

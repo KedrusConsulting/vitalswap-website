@@ -5,7 +5,11 @@ function Features() {
   return (
     <section className="features__section">
       <div className="container">
-        <div className="features__caption">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="features__caption"
+        >
           <h4 className="heading--caption">Vitalswap for Business</h4>
           <h2 className="heading--secondary">Merchant Unique Features</h2>
         </div>

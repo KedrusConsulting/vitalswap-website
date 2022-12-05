@@ -3,7 +3,11 @@ import Rating from "@mui/material/Rating";
 
 function TestimonialCard({ userName, review, rating, imageUrl }) {
   return (
-    <blockquote className="testimonials__card">
+    <blockquote
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className="testimonials__card"
+    >
       <img src={imageUrl} alt="User avatar" className="testimonials__avatar" />
       <h4>{userName}</h4>
 
