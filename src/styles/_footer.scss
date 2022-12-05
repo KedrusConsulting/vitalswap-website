@@ -71,6 +71,8 @@
 
   &__social-links {
     margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
 
     & > *:not(:last-child) {
       margin-right: 2.4rem;

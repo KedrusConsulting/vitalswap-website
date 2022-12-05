@@ -14,6 +14,7 @@ function SignUp() {
   const [countriesOptions, setCountriesOptions] = useState([
     { label: "Select Country", value: "" },
   ]);
+  const [showAlert, setShowAlert] = useState(false);
 
   const initialValues = {
     firstname: "",
@@ -25,9 +26,47 @@ function SignUp() {
     description: "",
   };
 
-  const validationSchema = Yup.object().shape({});
+  const validationSchema = Yup.object().shape({
+    firstname: Yup.string().required(),
+    lastname: Yup.string().required(),
+    companyName: Yup.string().required(),
+    email: Yup.string().email().required(),
+    phone: Yup.string().required(),
+    countryOfBusiness: Yup.string().required(),
+    description: Yup.string().required(),
+  });
 
-  const onSubmit = async (values, { resetForm }) => {};
+  const onSubmit = async (values, { resetForm }, onSubmitProps) => {
+    try {
+      const data = {
+        first_name: values.firstname,
+        last_name: values.lastname,
+        company_name: values.companyName,
+        email_address: values.email,
+        email: values.email,
+        phone_number: values.phone,
+        business_description: values.description,
+        country_of_Business: values.countryOfBusiness,
+      };
+
+      const res = await axios.post(
+        "https://vitalswap.com/test/api_v2/users/webForm",
+        data
+      );
+
+      if (res.status === 200) {
+        await onSubmitProps?.setSubmitting(false);
+        resetForm();
+        setShowAlert(true);
+
+        setInterval(() => setShowAlert(false), 10000);
+      }
+
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     const getCountries = async () => {
@@ -64,7 +103,13 @@ function SignUp() {
               validationSchema={validationSchema}
               onSubmit={onSubmit}
             >
-              {({ values, handleChange, handleSubmit }) => (
+              {({
+                values,
+                handleChange,
+                handleSubmit,
+                dirty,
+                isSubmitting,
+              }) => (
                 <form className="signup__form" onSubmit={handleSubmit}>
                   <h3 className="heading--tertiary">Let’s get Started</h3>
 
@@ -109,7 +154,7 @@ function SignUp() {
                   />
 
                   <InputField
-                    type="number"
+                    type="text"
                     name="phone"
                     id="phone"
                     label="Phone Number"
@@ -139,9 +184,16 @@ function SignUp() {
                   <button
                     type="submit"
                     className="btn btn--primary inputfield__btn"
+                    disabled={!dirty}
                   >
-                    Get Started
+                    {isSubmitting ? "Please wait..." : "Get Started"}
                   </button>
+
+                  {showAlert && (
+                    <div className="alertBox">
+                      <span>Message sent successfully</span>
+                    </div>
+                  )}
                 </form>
               )}
             </Formik>

@@ -59,10 +59,12 @@ function Marketplace() {
           </div>
 
           <div className="marketplace__img-box">
-            <img
+            <div
               data-aos="fade-down"
               data-aos-duration="2000"
               data-aos-delay="100"
+            ></div>
+            <img
               className="marketplace__img"
               src={app_screen_1}
               alt="App screen"

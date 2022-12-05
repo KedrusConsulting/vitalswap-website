@@ -7,6 +7,7 @@ import linkedin_icon from "../../assets/linkedin.svg";
 import twitter_icon from "../../assets/twitter.svg";
 import instagram_icon from "../../assets/instagram.svg";
 import facebook_icon from "../../assets/facebook.svg";
+import youtube_icon from "../../assets/youtube.svg";
 
 function Footer() {
   const { pathname } = useLocation();
@@ -45,6 +46,14 @@ function Footer() {
             <h5 className="footer__heading">Get Connected</h5>
 
             <div className="footer__social-links">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/@vitalswap"
+                className="footer__link"
+              >
+                <img src={youtube_icon} alt="Youtube Icon" />
+              </a>
+
               <a
                 target="_blank"
                 href="https://www.linkedin.com/company/vitalswap"

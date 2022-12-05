@@ -109,8 +109,8 @@
     }
   }
 
-  &__text-box {
-  }
+  // &__text-box {
+  // }
 
   &__card {
     background-color: var(--neutrals-white);
@@ -233,6 +233,10 @@
       margin-bottom: 1.2rem;
       max-width: 35rem;
 
+      @include respond(phone) {
+        margin: 0 auto 1.2rem;
+      }
+
       @include respond(xs-phone) {
         font-size: 3.6rem;
       }
@@ -243,8 +247,30 @@
 
       @include respond(phone) {
         color: var(--text-secondary);
+        margin-bottom: 2.4rem;
       }
     }
+
+    a {
+      border-radius: 10rem !important;
+      padding: 1.2rem 3.2rem !important;
+    }
+  }
+}
+
+.form_box-mob {
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.form_box-desk {
+  display: block;
+
+  @include respond(phone) {
+    display: none;
   }
 }
 
@@ -278,6 +304,8 @@
 
     .feature {
       padding: 2.4rem 1.6rem;
+      border-radius: 0.8rem;
+      // transition: all 0.1s;
 
       h4 {
         margin-bottom: 0.8rem;
@@ -289,6 +317,10 @@
 
       p {
         color: var(--text-secondary);
+      }
+
+      &:hover {
+        background-color: var(--grey-200);
       }
     }
   }

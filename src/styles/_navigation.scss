@@ -10,6 +10,7 @@
 .navbar {
   @include flex(space-between, center);
   padding: 1.6rem 0;
+  position: relative;
 
   &__logo {
     @include respond(md-phone) {
@@ -23,10 +24,23 @@
 
     & > *:not(:last-child) {
       margin-right: $spacing-4;
+
+      @include respond(tablet) {
+        margin-right: 0;
+        margin-bottom: 3.2rem;
+      }
     }
 
     @include respond(tablet) {
       display: none;
+      flex-direction: column;
+      padding: 3.2rem 0;
+      background-color: #f9f9f9;
+      width: 100%;
+      position: absolute;
+      top: 7rem;
+      border-radius: 0.8rem;
+      z-index: 100;
     }
   }
 
@@ -35,4 +49,16 @@
       display: none !important;
     }
   }
+
+  &__mobile {
+    display: none;
+
+    @include respond(tablet) {
+      display: block;
+    }
+  }
+}
+
+.navbar__list.open {
+  display: flex;
 }
