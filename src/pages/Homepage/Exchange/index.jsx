@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import CurrencyConverter from "../../../components/CurrencyConverter";
 
 function Exchange() {
+  const initialValues = {
+    amountToSend: "",
+    amountToReceive: "",
+  };
+
   const [position, setPosition] = useState(false);
   const { innerWidth: width } = window;
 
@@ -25,10 +30,10 @@ function Exchange() {
         <p>Enjoy competitive rates from multiple dealers</p>
 
         <div className="form_box-mob">
-          <Formik>
-            {() => (
+          <Formik initialValues={initialValues}>
+            {({ values, handleChange }) => (
               <form>
-                <CurrencyConverter />
+                <CurrencyConverter values={values} onChange={handleChange} />
               </form>
             )}
           </Formik>
@@ -45,10 +50,10 @@ function Exchange() {
         className="exchange__form-box"
       >
         <div className="form_box-desk">
-          <Formik>
-            {() => (
+          <Formik initialValues={initialValues}>
+            {({ values, handleChange }) => (
               <form>
-                <CurrencyConverter />
+                <CurrencyConverter values={values} onChange={handleChange} />
               </form>
             )}
           </Formik>

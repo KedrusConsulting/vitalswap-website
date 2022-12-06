@@ -5,9 +5,9 @@ import { HashLink } from "react-router-hash-link";
 function NavBarLink({ route, label }) {
   return (
     <li>
-      <HashLink to={route} className="navbar__link">
+      <a href={route} className="navbar__link">
         {label}
-      </HashLink>
+      </a>
     </li>
   );
 }

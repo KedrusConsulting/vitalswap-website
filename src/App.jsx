@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
