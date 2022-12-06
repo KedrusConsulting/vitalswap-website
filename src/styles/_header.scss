@@ -31,21 +31,22 @@
 
 .hero {
   display: grid;
-  grid-template-columns: 40fr 60fr;
   grid-template-rows: repeat(2, min-content);
   gap: 4.8rem;
   max-width: 114rem;
   margin: 0 auto;
   align-items: center;
 
-  @include respond(md-laptop) {
-    padding: 0 2.4rem;
-    grid-template-columns: 45fr 55fr;
-  }
+  // height: 688.89px;
+
+  // @include respond(md-laptop) {
+  //   padding: 0 2.4rem;
+  //   grid-template-columns: 45fr 55fr;
+  // }
 
   @include respond(tablet) {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, min-content);
+    gap: 0;
     margin-top: 10vh;
     // overflow-x: hidden;
   }
@@ -53,8 +54,42 @@
   @include respond(md-phone) {
     background-image: url(../assets/hero-svg.svg);
     background-size: contain;
-    background-position: 0px 120px;
+    background-position: 0px 180px;
     background-repeat: no-repeat;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    align-items: center;
+
+    &--2 {
+      grid-template-columns: 55fr 55fr;
+
+      p {
+        max-width: 45.5rem !important;
+      }
+    }
+
+    &--3 {
+      grid-template-columns: 55fr 55fr;
+
+      p {
+        max-width: 45.5rem !important;
+      }
+    }
+
+    @include respond(md-laptop) {
+      padding: 0 2.4rem;
+      grid-template-columns: 45fr 55fr;
+    }
+
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+      margin-top: 10vh;
+      gap: 4.8rem;
+      // overflow-x: hidden;
+    }
   }
 
   &--terms {
@@ -132,6 +167,8 @@
     @include respond(tablet) {
       grid-row: 2 / 3;
       grid-column: 1 / -1;
+
+      padding: 2vh 0 5vh;
     }
 
     .layer-glow {
@@ -239,9 +276,9 @@
     position: relative;
     z-index: 10;
 
-    & > *:not(:last-child) {
-      margin-right: 1.6rem;
-    }
+    // & > *:not(:last-child) {
+    //   margin-right: 1.6rem;
+    // }
 
     @include respond(tablet) {
       justify-content: center;
@@ -258,18 +295,45 @@
       width: 14rem;
 
       @include respond(phone) {
-        width: 108px;
+        // width: 108px;
         height: 36px;
         object-fit: contain;
       }
 
       img {
-        height: 4.8rem;
+        height: 4rem;
 
         @include respond(phone) {
           object-fit: contain;
         }
       }
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  height: 70rem;
+
+  @include respond(tablet) {
+    height: 86rem;
+  }
+
+  @include respond(sm-phone) {
+    height: 75rem;
+  }
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.8s;
+
+    &--active {
+      opacity: 1;
     }
   }
 }

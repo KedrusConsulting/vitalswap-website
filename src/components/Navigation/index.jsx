@@ -65,7 +65,7 @@ function Navigation() {
                 stroke="#343947"
                 strokeWidth="1.8"
                 strokeLinecap="round"
-                strokeLineJoin="round"
+                strokeLinejoin="round"
               />
             </svg>
           )}

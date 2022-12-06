@@ -15,7 +15,7 @@
     border: none;
     display: flex;
     border-radius: 0.8rem;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__input {
@@ -66,14 +66,57 @@
   &__dropdown {
     background-color: var(--blue-300);
     padding: 0.8rem 1.2rem;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 12rem;
+    position: relative;
 
     & > *:not(:last-child) {
       margin-right: 0.6rem;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    ul {
+      li {
+        overflow: hidden;
+      }
+    }
+
+    ul ul {
+      background-color: #fff;
+      padding: 0.8rem 0;
+      list-style: none;
+      position: absolute;
+      border-radius: 0.4rem;
+      top: 5.6rem;
+      z-index: 2000;
+
+      & > *:not(:last-child) {
+        margin-bottom: 0.6rem;
+      }
+
+      li {
+        padding: 0.4rem 1.2rem;
+        transition: all 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--blue-300);
+        }
+      }
+    }
+
+    li {
+      @include flex(center, center);
+
+      & > *:not(:last-child) {
+        margin-right: 0.6rem;
+      }
     }
   }
 
