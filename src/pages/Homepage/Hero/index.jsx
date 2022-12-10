@@ -16,6 +16,7 @@ import { HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4 } from "./HeroSlide";
 
 function Hero() {
   const sliderRef = useRef();
+  const dotRef = useRef();
 
   useEffect(() => {
     window.addEventListener("load", () => {
@@ -23,6 +24,8 @@ function Hero() {
       const sliders = Array.from(
         sliderRef.current.querySelectorAll(".slider__slide")
       );
+
+      const dots = Array.from(dotRef.current.querySelectorAll(".slider__dot"));
 
       setInterval(() => {
         if (cur < sliders.length - 1) {
@@ -35,10 +38,16 @@ function Hero() {
           slide.classList.remove("slider__slide--active");
         });
 
+        dots.map((dot, i) => {
+          dot.classList.remove("slider__dot--active");
+        });
+
         sliders[cur].classList.add("slider__slide--active");
+        dots[cur].classList.add("slider__dot--active");
       }, 5000);
     });
   }, []);
+
   return (
     <div className="hero">
       <div className="slider__container">
@@ -58,6 +67,13 @@ function Hero() {
           <div className="slider__slide">
             <HeroSlide4 />
           </div>
+        </div>
+
+        <div className="slider__dots" ref={dotRef}>
+          <div className="slider__dot slider__dot--active"></div>
+          <div className="slider__dot"></div>
+          <div className="slider__dot"></div>
+          <div className="slider__dot"></div>
         </div>
       </div>
 

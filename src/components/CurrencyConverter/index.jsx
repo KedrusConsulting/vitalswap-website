@@ -53,7 +53,7 @@ function CurrencyConverter({ values, onChange }) {
       />
 
       <div className="currency__rate">
-        <span>1 NGN = 0.002 USD</span>
+        <span>{`1 USD = ${rate?.iHaveDollarsIneedNaira} NGN`}</span>
       </div>
 
       <CurrencyField

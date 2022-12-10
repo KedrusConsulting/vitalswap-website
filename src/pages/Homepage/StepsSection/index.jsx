@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import enter_amount_screen from "../../../assets/slider-@1x.png";
 import destination_currency_screen from "../../../assets/slider-2@1x.png";
-import sendto_recip_screen from "../../../assets/slider-@1x.png";
+import sendto_recip_screen from "../../../assets/slider-3@1x.png";
 
 function StepsSection() {
   const imgsContainerRef = useRef();
@@ -33,40 +33,70 @@ function StepsSection() {
   //   curStepElem.insertAdjacentElement("afterend", curImg);
   // };
 
-  const handleSteps = (e) => {
-    const elem = e.target.closest(".steps__card");
-    let curImg;
-
-    const steps = Array.from(
+  useEffect(() => {
+    let cur = 0;
+    const stepsCard = Array.from(
       cardsContainerRef.current.querySelectorAll(".steps__card")
     );
 
-    const imgs = Array.from(
+    const stepsImg = Array.from(
       imgsContainerRef.current.querySelectorAll("[class^=steps__img")
     );
 
-    if (elem) {
-      steps.map((step) => {
-        step.classList.remove("steps__card--active");
+    setInterval(() => {
+      if (cur < stepsCard.length - 1) {
+        cur++;
+      } else {
+        cur = 0;
+      }
+
+      stepsCard.map((card, i) => {
+        card.classList.remove("steps__card--active");
       });
 
-      elem.classList.add("steps__card--active");
-
-      imgs.map((img) => {
+      stepsImg.map((img, i) => {
         img.classList.remove("steps__img--active");
-
-        const curStep = document.querySelector(".steps__card--active").dataset
-          .card;
-        curImg = document.querySelector(`[data-img="${curStep}"]`);
       });
 
-      curImg?.classList.add("steps__img--active");
-    }
+      stepsCard[cur].classList.add("steps__card--active");
+      stepsImg[cur].classList.add("steps__img--active");
+    }, 4000);
+  }, []);
 
-    if (window.innerWidth <= "768") {
-      repositionImg();
-    }
-  };
+  // const handleSteps = (e) => {
+  //   const elem = e.target.closest(".steps__card");
+  //   let curImg;
+
+  //   const steps = Array.from(
+  //     cardsContainerRef.current.querySelectorAll(".steps__card")
+  //   );
+
+  //   const imgs = Array.from(
+  //     imgsContainerRef.current.querySelectorAll("[class^=steps__img")
+  //   );
+
+  //   if (elem) {
+  //     steps.map((step) => {
+  //       step.classList.remove("steps__card--active");
+  //     });
+
+  //     elem.classList.add("steps__card--active");
+
+  //     imgs.map((img) => {
+  //       img.classList.remove("steps__img--active");
+
+  //       const curStep = document.querySelector(".steps__card--active").dataset
+  //         .card;
+  //       curImg = document.querySelector(`[data-img="${curStep}"]`);
+  //     });
+
+  //     curImg?.classList.add("steps__img--active");
+  //   }
+
+  //   // if (window.innerWidth <= "768") {
+  //   //   repositionImg();
+  //   // }
+  // };
 
   return (
     <section className="steps__section" id="how-it-works">
@@ -83,7 +113,7 @@ function StepsSection() {
 
         <div
           className="steps__container"
-          onClick={handleSteps}
+          // onClick={handleSteps}
           ref={cardsContainerRef}
         >
           <div className="steps__text-box">
@@ -94,9 +124,12 @@ function StepsSection() {
               className="steps__card steps__card--active"
             >
               <h4 className="heading--quad">
-                1. Enter an amount you want to send
+                1. Enter amount you wish to send
               </h4>
-              <p>Sign up in 3 easy steps to add money to your account.</p>
+              <p>
+                Once you have signed up, add an amount you have to send, and hit
+                the EasySend button.
+              </p>
             </div>
 
             <div
@@ -106,9 +139,12 @@ function StepsSection() {
               className="steps__card"
             >
               <h4 className="heading--quad">
-                2. Choose your destination currency
+                2. Choose a destination currency
               </h4>
-              <p>Choose the best rates available on the marketplace.</p>
+              <p>
+                Select the destination currency, and VitalSwap EasySend will
+                help you select the best rates in the market.
+              </p>
             </div>
 
             <div
@@ -117,9 +153,10 @@ function StepsSection() {
               data-aos-duration="2000"
               className="steps__card"
             >
-              <h4 className="heading--quad">3. Send to recipient</h4>
+              <h4 className="heading--quad">3. Send to recipients</h4>
               <p>
-                Send money to anywhere in the world straight from your account.
+                Select send to yourself or someone else and funds will be
+                delivered in seconds.
               </p>
             </div>
           </div>

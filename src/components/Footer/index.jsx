@@ -37,7 +37,7 @@ function Footer() {
               </Link>
 
               <Link to="/privacy" className="footer__link">
-                Privacy POlicy
+                Privacy Policy
               </Link>
             </div>
           </div>

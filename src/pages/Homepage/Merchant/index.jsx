@@ -17,9 +17,9 @@ function Merchant() {
             </h2>
 
             <p>
-              Are you loosing revenue due to exchange rates when you receive
-              payments from Africa? Get vitalswap for business and receive
-              payments from Africa in local currency.
+              Are you loosing revenue due exchange rates when you receive
+              payments from Africa? Get VitalSwap for business and receive
+              payments from Africa in your local currency.
             </p>
 
             <Link to="/signup" className="btn btn--white">

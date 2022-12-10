@@ -58,7 +58,7 @@ function Testimonials() {
           />
 
           <TestimonialCard
-            userName={"Kehinde Kenny"}
+            userName={"Ebenezer Ogunmola"}
             imageUrl={user_6}
             rating={5}
             review="I was impressed with how efficient and fast this app is in buying naira or dollars. I give it a 5 star."

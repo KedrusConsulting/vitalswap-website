@@ -9,7 +9,7 @@ function Process() {
         className="process__caption"
       >
         <h3 className="heading--tertiary">
-          Safe & Secure Process to swap your Money
+          Safe & Secure Process to send your Money
         </h3>
       </div>
 

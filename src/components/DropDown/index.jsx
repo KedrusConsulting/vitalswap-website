@@ -18,23 +18,11 @@ const CurrencyDropdown = () => {
   ];
 
   return (
-    <ul>
-      <li>
-        <span className="currency__currency">{currrencyOptions[0].text}</span>
-
-        <img src={currrencyOptions[0].image.src} alt="currency__flag" />
-      </li>
-
-      <ul>
-        {currrencyOptions.map((option) => (
-          <li>
-            <span className="currency__currency">{option.text}</span>
-
-            <img src={option.image.src} alt="currency__flag" />
-          </li>
-        ))}
-      </ul>
-    </ul>
+    <Dropdown
+      inline
+      options={currrencyOptions}
+      defaultValue={currrencyOptions[0].value}
+    />
   );
 };
 

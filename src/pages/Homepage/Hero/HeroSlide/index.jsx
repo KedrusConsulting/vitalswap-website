@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+
+import USD from "../../../../assets/us-svg.svg";
+import NGN from "../../../../assets/ng-svg.svg";
 
 import { Link } from "react-router-dom";
 import apple_store from "../../../../assets/apple-store@1.5x.png";
@@ -9,13 +12,34 @@ import hero_img01 from "../../../../assets/hero-img@1x.png";
 import hero_img02 from "../../../../assets/hero-img-2@2x.png";
 import hero_img03 from "../../../../assets/hero-img-3@2x.png";
 import hero_img04 from "../../../../assets/hero-img-4@2x.png";
+import RateCard from "../../../../components/RateCard";
+import { useEffect } from "react";
+import axios from "axios";
+// import Control from "react-s elect/dist/declarations/src/components/Control";
 
 export function HeroSlide1() {
+  const [rateUSD, setUSDRate] = useState();
+  const [rateNaria, setNariaRate] = useState();
+
+  useEffect(() => {
+    const getRate = async () => {
+      const {
+        data: {
+          rate: { iHaveDollarsIneedNaira, iHaveNairaIneedDollars },
+        },
+      } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
+
+      setUSDRate(iHaveNairaIneedDollars);
+      setNariaRate(iHaveDollarsIneedNaira);
+    };
+
+    getRate();
+  }, []);
   return (
     <div className="hero__container">
       <div className="hero__text-box">
         <h1 className="heading--primary">
-          The Easy way to Swap & Send your money.
+          The easy way to swap and send your money.
         </h1>
         <p className="text__lg">
           Send money easily to your friends and family in few clicks
@@ -55,6 +79,24 @@ export function HeroSlide1() {
             fill="white"
           />
         </svg>
+
+        <div className="rate__cards">
+          <RateCard
+            symbol={"₦"}
+            amtToSend={50000}
+            amtToReceive={`$${(50000 / rateUSD).toFixed(2)}`}
+            currency={USD}
+            rate={rateUSD}
+          />
+
+          <RateCard
+            symbol={"$"}
+            amtToSend={1000}
+            amtToReceive={`₦${(1000 * rateNaria).toFixed(2)}`}
+            currency={NGN}
+            rate={rateNaria}
+          />
+        </div>
       </div>
     </div>
   );
@@ -68,7 +110,7 @@ export function HeroSlide2() {
           Make payments to merchants across the globe.
         </h1>
         <p className="text__lg">
-          Pay local and foreign merchants like copart, IAAI & other with your
+          Pay local and foreign merchants like copart, IAAI & others with your
           local currency.
         </p>
 
@@ -119,7 +161,7 @@ export function HeroSlide3() {
           Real-time instant exchange and credit.
         </h1>
         <p className="text__lg">
-          Change your dollars or naira or naira to dollars at the best market
+          Exchange your dollars to naira or naira to dollars at the best market
           rates and get credited immediately.
         </p>
 
@@ -145,7 +187,7 @@ export function HeroSlide3() {
         <img src={hero_img03} alt="Hero img" />
 
         <svg
-          className="hero__svg"
+          className="hero__svg hero__svg--3"
           viewBox="0 0 761 567"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -167,12 +209,12 @@ export function HeroSlide4() {
     <div className="hero__container hero__container--3">
       <div className="hero__text-box">
         <h1 className="heading--primary">
-          Do you receive payments from Africa as merchant?.
+          Get paid from Africa as a merchant.
         </h1>
         <p className="text__lg">
           Are you loosing revenue due exchange rates when you receive payments
-          from Africa? Get vitalswap for business and receive payments from
-          Africa in local currency.
+          from Africa? Get VitalSwap for business and receive payments from
+          Africa in your local currency.
         </p>
 
         <div className="hero__cta">

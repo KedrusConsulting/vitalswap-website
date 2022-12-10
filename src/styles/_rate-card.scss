@@ -1,0 +1,161 @@
+.rate {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1.2rem 2.4rem;
+    border-radius: 0.8rem;
+    position: absolute;
+    left: 0;
+    z-index: 99;
+    gap: 0.4rem;
+    font-size: 1.4rem;
+    transform: scale(0.85);
+
+    width: 42.2rem;
+    max-width: 42.2rem;
+
+    &:nth-child(1) {
+      top: 32rem;
+
+      @include respond(md-laptop) {
+        top: 45%;
+      }
+
+      @include respond(tablet) {
+        left: 15%;
+        transform: scale(0.75);
+      }
+
+      @include respond(phone) {
+        left: 3%;
+        transform: scale(0.7);
+      }
+
+      @include respond(md-phone) {
+        left: -4%;
+        top: 40%;
+        transform: scale(0.6);
+      }
+
+      @include respond(sm-phone) {
+        left: -10%;
+        transform: scale(0.5);
+      }
+
+      @include respond(xs-phone) {
+        top: 35%;
+        left: -20%;
+        transform: scale(0.45);
+      }
+    }
+
+    &:nth-child(2) {
+      top: 45rem;
+      left: -8rem;
+
+      @include respond(md-laptop) {
+        top: 68%;
+      }
+
+      @include respond(tablet) {
+        top: 67%;
+        left: 10%;
+        transform: scale(0.75);
+      }
+
+      @include respond(phone) {
+        left: 0%;
+        transform: scale(0.7);
+      }
+
+      @include respond(md-phone) {
+        top: 61%;
+        left: -7%;
+        transform: scale(0.6);
+      }
+
+      @include respond(sm-phone) {
+        left: -15%;
+        transform: scale(0.5);
+      }
+
+      @include respond(xs-phone) {
+        top: 56%;
+        left: -25%;
+        transform: scale(0.45);
+      }
+    }
+
+    span {
+      // display: inline-block;
+      width: fit-content;
+    }
+
+    img {
+      width: 24rem;
+    }
+  }
+
+  &__receive,
+  &__send {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__left {
+    .label {
+      color: var(--black-300);
+    }
+
+    .atm {
+      font-weight: 500;
+    }
+  }
+
+  &__right {
+    .rate {
+      color: var(--black-300);
+    }
+
+    .atm {
+      font-weight: 500;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    // width: 20rem;
+    gap: 1.2rem;
+    background-color: #d9ebfe;
+    padding: 1rem 1.2rem;
+    border-radius: 1.2rem;
+
+    span {
+      font-weight: 500;
+    }
+
+    img {
+      display: block;
+      width: 3.2rem !important;
+      left: 0 !important;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    background-color: var(--blue-400);
+    color: #fff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 0.8rem 0.8rem;
+  }
+}

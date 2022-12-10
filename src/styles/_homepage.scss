@@ -176,7 +176,7 @@
     }
 
     &--1 {
-      background-color: #fff8e6;
+      background-color: var(--grey-200);
     }
 
     &--2 {
@@ -184,7 +184,7 @@
     }
 
     &--3 {
-      background-color: #ffb805;
+      background-color: var(--vs-blue);
     }
 
     &--active {
