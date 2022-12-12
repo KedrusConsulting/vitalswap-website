@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import ScrollToTop from "./components/ScrollToTop";
 
+import "semantic-ui-css/semantic.min.css";
 import "./styles/index.scss";
 import "aos/dist/aos.css";
 

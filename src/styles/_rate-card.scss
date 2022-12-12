@@ -6,41 +6,41 @@
     padding: 1.2rem 2.4rem;
     border-radius: 0.8rem;
     position: absolute;
-    left: 0;
+    left: -40px;
     z-index: 99;
     gap: 0.4rem;
     font-size: 1.4rem;
-    transform: scale(0.85);
+    transform: scale(0.6);
 
     width: 42.2rem;
     max-width: 42.2rem;
 
     &:nth-child(1) {
-      top: 32rem;
+      top: 36rem;
 
       @include respond(md-laptop) {
-        top: 45%;
+        top: 52%;
       }
 
       @include respond(tablet) {
         left: 15%;
-        transform: scale(0.75);
+        top: 50%;
       }
 
       @include respond(phone) {
         left: 3%;
-        transform: scale(0.7);
+        top: 49%;
       }
 
       @include respond(md-phone) {
         left: -4%;
-        top: 40%;
-        transform: scale(0.6);
+        top: 43%;
       }
 
       @include respond(sm-phone) {
         left: -10%;
         transform: scale(0.5);
+        top: 41%;
       }
 
       @include respond(xs-phone) {
@@ -61,12 +61,10 @@
       @include respond(tablet) {
         top: 67%;
         left: 10%;
-        transform: scale(0.75);
       }
 
       @include respond(phone) {
         left: 0%;
-        transform: scale(0.7);
       }
 
       @include respond(md-phone) {

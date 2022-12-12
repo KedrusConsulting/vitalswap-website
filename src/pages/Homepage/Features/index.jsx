@@ -11,7 +11,7 @@ function Features() {
           className="features__caption"
         >
           <h4 className="heading--caption">Vitalswap for Business</h4>
-          <h2 className="heading--secondary">Merchant Unique Features</h2>
+          <h2 className="heading--secondary">Unique Features for Merchants</h2>
         </div>
 
         <div className="features__features">
@@ -58,8 +58,7 @@ function Features() {
                   />
                 </svg>
               }
-              label="Receive payments in your local currency irrespective of customers
-              currency."
+              label="Receive payments in your local currency irrespective of customer's currency.              "
             />
           </div>
 
@@ -98,8 +97,7 @@ function Features() {
                   />
                 </svg>
               }
-              label="Access free smart & duly documented API for integration and check
-              out."
+              label="Free access to smart & duly documented API for integration and check out."
             />
           </div>
 
@@ -142,8 +140,7 @@ function Features() {
                   />
                 </svg>
               }
-              label="Get intuitive dashboard for reports, along with daily payouts to
-            your bank accounts."
+              label="Get intuitive dashboard for reports, along with daily payouts to your bank accounts."
             />
           </div>
         </div>

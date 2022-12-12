@@ -12,6 +12,9 @@ function CurrencyConverter({ values, onChange }) {
   const [amountToReceive, setAmountToReceive] = useState(0);
   const [rate, setRate] = useState();
 
+  const [ngn, setNgn] = useState(0);
+  const [usd, setUsd] = useState(1);
+
   const handleAmountToSend = (e) => {
     setAmountToSend(e.target.value);
 
@@ -21,6 +24,10 @@ function CurrencyConverter({ values, onChange }) {
 
   const handleAmountToReceive = (e) => {
     setAmountToSend(e.target.value);
+  };
+
+  const handleCheckRates = () => {
+    console.log("");
   };
 
   useEffect(() => {
@@ -49,7 +56,8 @@ function CurrencyConverter({ values, onChange }) {
         currency={"NGN"}
         value={amountToSend}
         onChange={handleAmountToSend}
-        countryFlag={currency_flag_1}
+        handleChange={handleCheckRates}
+        defaultValue={ngn}
       />
 
       <div className="currency__rate">
@@ -65,7 +73,7 @@ function CurrencyConverter({ values, onChange }) {
         currency={"USD"}
         value={amountToReceive}
         onChange={handleAmountToReceive}
-        countryFlag={currency_flag_2}
+        defaultValue={usd}
       />
     </div>
   );

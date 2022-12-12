@@ -71,7 +71,8 @@
       }
     }
 
-    &--3 {
+    &--3,
+    &--4 {
       grid-template-columns: 55fr 55fr;
 
       p {
@@ -89,6 +90,30 @@
       margin-top: 10vh;
       gap: 4.8rem;
       // overflow-x: hidden;
+    }
+
+    &--1 {
+      @include respond(phone) {
+        margin-top: 6vh;
+      }
+    }
+
+    &--2 {
+      @include respond(phone) {
+        margin-top: 7vh;
+      }
+    }
+
+    &--3 {
+      @include respond(phone) {
+        margin-top: 7vh;
+      }
+    }
+
+    &--4 {
+      @include respond(phone) {
+        margin-top: -1vh;
+      }
     }
   }
 
@@ -137,7 +162,7 @@
 
     h1 {
       margin-bottom: 1.6rem;
-      // max-width: 45rem;
+      max-width: 53rem;
 
       @include respond(tablet) {
         max-width: 60rem;
@@ -333,7 +358,7 @@
   }
 
   @include respond(sm-phone) {
-    height: 75rem;
+    height: 80rem;
   }
 
   &__slide {
@@ -350,13 +375,21 @@
     }
   }
 
+  &__container {
+    position: relative;
+  }
+
   &__dots {
     display: flex;
     position: absolute;
-    bottom: -5%;
+    bottom: 20%;
 
     @include respond(tablet) {
-      display: none;
+      // display: none;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0%;
+      z-index: 999;
     }
 
     & > *:not(:last-child) {

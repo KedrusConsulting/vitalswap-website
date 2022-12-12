@@ -15,7 +15,7 @@
     border: none;
     display: flex;
     border-radius: 0.8rem;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__input {
@@ -136,7 +136,7 @@
       content: "";
       display: block;
       width: 2px;
-      height: 30px;
+      height: 35px;
       background-color: var(--vs-blue);
       position: absolute;
       z-index: 1;
@@ -144,7 +144,7 @@
 
     &::before {
       left: 24px;
-      top: -25px;
+      top: -35px;
     }
 
     &::after {
@@ -160,4 +160,37 @@
 
   &__icon {
   }
+}
+
+.ui.inline.dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.ui.inline.dropdown > .text {
+  display: flex;
+  align-items: center;
+}
+
+.ui.dropdown > .text > .image {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.ui.avatar.image {
+  border-radius: 0;
+}
+
+.ui.dropdown > .dropdown.icon:before {
+  display: none;
+}
+
+.ui.dropdown .menu > .item {
+  padding: 1.2rem 1.6rem !important;
+}
+
+.ui.dropdown .menu > .item > .image,
+.ui.dropdown .menu > .item > img {
+  width: 2.4rem;
+  height: 2.4rem;
 }

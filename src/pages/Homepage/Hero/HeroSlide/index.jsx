@@ -36,7 +36,7 @@ export function HeroSlide1() {
     getRate();
   }, []);
   return (
-    <div className="hero__container">
+    <div className="hero__container hero__container--1">
       <div className="hero__text-box">
         <h1 className="heading--primary">
           The easy way to swap and send your money.
@@ -206,15 +206,15 @@ export function HeroSlide3() {
 
 export function HeroSlide4() {
   return (
-    <div className="hero__container hero__container--3">
+    <div className="hero__container hero__container--4">
       <div className="hero__text-box">
         <h1 className="heading--primary">
           Get paid from Africa as a merchant.
         </h1>
         <p className="text__lg">
-          Are you loosing revenue due exchange rates when you receive payments
-          from Africa? Get VitalSwap for business and receive payments from
-          Africa in your local currency.
+          Are you loosing revenue due to exchange rates when you receive
+          payments from Africa? Get VitalSwap for business and receive payments
+          from Africa in your local currency.
         </p>
 
         <div className="hero__cta">

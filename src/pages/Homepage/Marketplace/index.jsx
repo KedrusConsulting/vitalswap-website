@@ -33,12 +33,12 @@ function Marketplace() {
             className="marketplace__text-box"
           >
             <h3 className="heading--tertiary">
-              One Stop Marketplace for your Best rate
+              One Stop Marketplace for your Best rate.
             </h3>
 
             <p>
               Send money to friends and family. Make payments to merchants
-              accross borders.
+              across borders.
             </p>
 
             <div className="hero__cta">

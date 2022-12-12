@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Dropdown } from "semantic-ui-react";
 
-const CurrencyDropdown = () => {
+const CurrencyDropdown = ({ defaultValue, handleChange }) => {
   const currrencyOptions = [
     {
       key: "NGN",
@@ -21,7 +21,8 @@ const CurrencyDropdown = () => {
     <Dropdown
       inline
       options={currrencyOptions}
-      defaultValue={currrencyOptions[0].value}
+      defaultValue={currrencyOptions[defaultValue].value}
+      onChange={handleChange}
     />
   );
 };

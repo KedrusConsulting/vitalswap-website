@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import cash_app from "../../../assets/Cash App - Dollar - Full 1@2x.png";
 import flutterwave from "../../../assets/Flutterwave 1@2x.png";
@@ -8,45 +8,69 @@ import plaid from "../../../assets/plaid-logo-horizontal-RGB 1@2x.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+
 import { EffectFade, Pagination } from "swiper";
 import { HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4 } from "./HeroSlide";
+import { paginationClasses } from "@mui/material";
 
 // Import Swiper styles
 // import "swiper/css";
 
 function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  let cur = 0;
+
   const sliderRef = useRef();
   const dotRef = useRef();
 
-  useEffect(() => {
-    window.addEventListener("load", () => {
-      let cur = 0;
-      const sliders = Array.from(
-        sliderRef.current.querySelectorAll(".slider__slide")
-      );
+  const goToSlide = function (slide) {
+    sliderRef.current
+      .querySelectorAll(".slider__slide")
+      .forEach((s, i) => s.classList.remove("slider__slide--active"));
 
-      const dots = Array.from(dotRef.current.querySelectorAll(".slider__dot"));
+    dotRef.current
+      .querySelectorAll(".slider__dot")
+      .forEach((s, i) => s.classList.remove("slider__dot--active"));
 
-      setInterval(() => {
-        if (cur < sliders.length - 1) {
-          cur++;
-        } else {
-          cur = 0;
-        }
+    sliderRef.current
+      .querySelectorAll(".slider__slide")
+      [slide].classList.add("slider__slide--active");
 
-        sliders.map((slide, i) => {
-          slide.classList.remove("slider__slide--active");
-        });
+    dotRef.current
+      .querySelectorAll(".slider__dot")
+      [slide].classList.add("slider__dot--active");
+  };
 
-        dots.map((dot, i) => {
-          dot.classList.remove("slider__dot--active");
-        });
+  let sliderTimer = setInterval(() => {
+    if (cur < 3) {
+      cur++;
+    } else {
+      cur = 0;
+    }
 
-        sliders[cur].classList.add("slider__slide--active");
-        dots[cur].classList.add("slider__dot--active");
-      }, 5000);
-    });
-  }, []);
+    goToSlide(cur);
+  }, 5000);
+
+  const pagination = (e) => {
+    const elem = e.target.closest(".slider__dot");
+
+    cur = Number(elem.dataset.dot);
+    goToSlide(cur);
+    clearInterval(sliderTimer);
+
+    sliderTimer = setInterval(() => {
+      if (cur < 3) {
+        cur++;
+      } else {
+        cur = 0;
+      }
+
+      goToSlide(cur);
+    }, 5000);
+  };
 
   return (
     <div className="hero">
@@ -69,11 +93,13 @@ function Hero() {
           </div>
         </div>
 
-        <div className="slider__dots" ref={dotRef}>
-          <div className="slider__dot slider__dot--active"></div>
-          <div className="slider__dot"></div>
-          <div className="slider__dot"></div>
-          <div className="slider__dot"></div>
+        <div className="container">
+          <div className="slider__dots" ref={dotRef} onClick={pagination}>
+            <div className="slider__dot slider__dot--active" data-dot="0"></div>
+            <div className="slider__dot" data-dot="1"></div>
+            <div className="slider__dot" data-dot="2"></div>
+            <div className="slider__dot" data-dot="3"></div>
+          </div>
         </div>
       </div>
 

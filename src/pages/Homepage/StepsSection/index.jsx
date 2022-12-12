@@ -127,9 +127,21 @@ function StepsSection() {
                 1. Enter amount you wish to send
               </h4>
               <p>
-                Once you have signed up, add an amount you have to send, and hit
-                the EasySend button.
+                Once you sign up, add an amount you want to send, and hit the
+                EasySend button.
               </p>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="steps__img--mob steps__img--1"
+              data-mob="1"
+            >
+              <img
+                src={enter_amount_screen}
+                alt="Vitalswap send money app screen"
+              />
             </div>
 
             <div
@@ -148,6 +160,18 @@ function StepsSection() {
             </div>
 
             <div
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="steps__img--mob steps__img--2"
+              data-mob="2"
+            >
+              <img
+                src={destination_currency_screen}
+                alt="Vitalswap send money app screen"
+              />
+            </div>
+
+            <div
               data-card="3"
               data-aos="fade-up"
               data-aos-duration="2000"
@@ -158,6 +182,18 @@ function StepsSection() {
                 Select send to yourself or someone else and funds will be
                 delivered in seconds.
               </p>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              className="steps__img--mob steps__img--3"
+              data-mob="3"
+            >
+              <img
+                src={sendto_recip_screen}
+                alt="Vitalswap send money app screen"
+              />
             </div>
           </div>
           <div

@@ -125,6 +125,11 @@
       margin: 0 auto;
     }
 
+    @include respond(md-phone) {
+      // max-width: 60rem;
+      margin: 4.8rem auto 0;
+    }
+
     &:not(:last-child) {
       margin-bottom: 2.4rem;
     }
@@ -189,6 +194,30 @@
 
     &--active {
       z-index: 4;
+    }
+
+    &--mob {
+      height: 48rem;
+      display: none;
+
+      padding: 3.2rem;
+      // display: flex;
+      justify-content: center;
+      margin-bottom: 2.4rem;
+      border-radius: 0.8rem;
+      position: relative;
+
+      @include respond(phone) {
+        display: flex;
+      }
+
+      @include respond(md-phone) {
+        height: 32rem;
+      }
+
+      img {
+        height: 100%;
+      }
     }
   }
 }
@@ -392,6 +421,10 @@
 
     @include respond(phone) {
       gap: 1.8rem 2.7rem;
+    }
+
+    figure {
+      margin: 0;
     }
 
     figure:nth-child(1),
@@ -754,11 +787,15 @@
     border-radius: 0.8rem;
     // width: calc((100% - 2.4rem) / 2);
     align-self: start;
+
+    &--is-open {
+      padding-bottom: 0.2rem;
+    }
   }
 
   &__title {
     @include flex(space-between, center);
-    margin-bottom: 3.2rem;
+    margin-bottom: 2.4rem;
     cursor: pointer;
 
     h5 {
