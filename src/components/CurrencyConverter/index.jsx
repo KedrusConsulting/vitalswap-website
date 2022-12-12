@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import currency_flag_1 from "../../assets/ng-flag.svg";
-import currency_flag_2 from "../../assets/us-flag.svg";
+
 import CurrencyField from "../CurrencyField";
 
 import { headers } from "../../utils/headers";
