@@ -48,6 +48,7 @@ function StepsSection() {
 
   const handleSteps = (e) => {
     const elem = e.target.closest(".steps__card");
+
     const stepsCard = Array.from(
       cardsContainerRef.current.querySelectorAll(".steps__card")
     );
@@ -57,10 +58,25 @@ function StepsSection() {
 
     cur = +elem.dataset.card;
 
+    console.log("------------------");
     console.log(cur);
 
     clearInterval(stepsTimer);
-    setInterval((cur) => {
+
+    stepsCard.map((card, i) => {
+      card.classList.remove("steps__card--active");
+    });
+
+    stepsImg.map((img, i) => {
+      img.classList.remove("steps__img--active");
+    });
+
+    stepsCard[cur].classList.add("steps__card--active");
+    stepsImg[cur].classList.add("steps__img--active");
+
+    // alert("Stopped timer");
+
+    stepsTimer = setInterval(() => {
       stepsCard.map((card, i) => {
         card.classList.remove("steps__card--active");
       });
@@ -75,7 +91,7 @@ function StepsSection() {
         cur = 0;
       }
 
-      console.log("..........");
+      console.log("**********");
       console.log(cur);
 
       stepsCard[cur].classList.add("steps__card--active");

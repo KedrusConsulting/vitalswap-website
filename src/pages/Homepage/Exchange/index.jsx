@@ -39,9 +39,12 @@ function Exchange() {
           </Formik>
         </div>
 
-        <Link to={"/signup"} className="btn btn--primary mt-4">
+        <a
+          href="https://vitalswap.com/download.html"
+          className="btn btn--primary mt-4"
+        >
           Get Started
-        </Link>
+        </a>
       </div>
 
       <div
