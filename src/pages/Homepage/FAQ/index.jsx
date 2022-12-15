@@ -15,7 +15,7 @@ function FAQ() {
         >
           <h4 className="heading--caption">FAQs</h4>
           <h2 className="heading--secondary">
-            We Answered some of your questions
+            We answered some of your questions
           </h2>
         </div>
 

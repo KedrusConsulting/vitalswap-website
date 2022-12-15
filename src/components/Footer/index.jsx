@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import footer_logo from "../../assets/vitalswap-logo2.png";
+import footer_logo from "../../assets/vitalswap-logo2.svg";
 
 import linkedin_icon from "../../assets/linkedin.svg";
 import twitter_icon from "../../assets/twitter.svg";
