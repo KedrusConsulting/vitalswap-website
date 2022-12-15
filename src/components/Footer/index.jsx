@@ -25,7 +25,7 @@ function Footer() {
             <h5 className="footer__heading">About Us</h5>
 
             <p>
-              VitalSwap provides an easy and secured way to swap, send and make
+              VitalSwap provides an easy and secure way to swap, send and make
               payments across the globe. We provide the marketplace as a
               technology. All funds are held and insured by FDIC at the
               processors bank.

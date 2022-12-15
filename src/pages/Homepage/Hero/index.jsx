@@ -1,4 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Pagination } from "swiper";
 
 import cash_app from "../../../assets/Cash App - Dollar - Full 1@2x.png";
 import flutterwave from "../../../assets/Flutterwave 1@2x.png";
@@ -6,17 +13,7 @@ import zelle from "../../../assets/Group@2x.png";
 import vouched from "../../../assets/vouched_logo_hi_res 1@2x.png";
 import plaid from "../../../assets/plaid-logo-horizontal-RGB 1@2x.png";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-
-import { EffectFade, Pagination } from "swiper";
 import { HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4 } from "./HeroSlide";
-import { paginationClasses } from "@mui/material";
-
-// Import Swiper styles
-// import "swiper/css";
 
 function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,19 +25,19 @@ function Hero() {
 
   const goToSlide = function (slide) {
     sliderRef.current
-      .querySelectorAll(".slider__slide")
+      ?.querySelectorAll(".slider__slide")
       .forEach((s, i) => s.classList.remove("slider__slide--active"));
 
     dotRef.current
-      .querySelectorAll(".slider__dot")
+      ?.querySelectorAll(".slider__dot")
       .forEach((s, i) => s.classList.remove("slider__dot--active"));
 
     sliderRef.current
-      .querySelectorAll(".slider__slide")
+      ?.querySelectorAll(".slider__slide")
       [slide].classList.add("slider__slide--active");
 
     dotRef.current
-      .querySelectorAll(".slider__dot")
+      ?.querySelectorAll(".slider__dot")
       [slide].classList.add("slider__dot--active");
   };
 
@@ -56,21 +53,25 @@ function Hero() {
 
   const pagination = (e) => {
     const elem = e.target.closest(".slider__dot");
-
     cur = Number(elem.dataset.dot);
     goToSlide(cur);
     clearInterval(sliderTimer);
-
     sliderTimer = setInterval(() => {
       if (cur < 3) {
         cur++;
       } else {
         cur = 0;
       }
-
       goToSlide(cur);
     }, 5000);
   };
+
+  // useEffect(() => {
+  //   const carousel = new Swipe(document.querySelector(".slider__container"), {
+  //     startSlide: 0,
+  //     speed: 400,
+  //   });
+  // }, []);
 
   return (
     <div className="hero">
@@ -102,6 +103,17 @@ function Hero() {
           </div>
         </div>
       </div>
+      {/* <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper> */}
 
       <div className="powered-by">
         <h4>Powered By</h4>

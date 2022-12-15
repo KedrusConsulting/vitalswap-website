@@ -25,6 +25,7 @@
     "sass": "^1.56.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
+    "swipejs": "^2.3.1",
     "swiper": "^8.4.5",
     "yup": "^0.32.11"
   },

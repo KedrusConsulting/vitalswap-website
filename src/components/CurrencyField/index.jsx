@@ -7,9 +7,9 @@ function CurrencyField({
   name,
   value,
   type,
+  value2,
   placeholder,
   onChange,
-  defaultValue,
   onSelectChange,
 }) {
   return (
@@ -27,10 +27,7 @@ function CurrencyField({
         />
       </div>
       <div className="currency__dropdown">
-        <CurrencyDropdown
-          handleChange={onSelectChange}
-          defaultValue={defaultValue}
-        />
+        <CurrencyDropdown handleChange={onSelectChange} value={value2} />
 
         <span className="currency__icon">
           <svg

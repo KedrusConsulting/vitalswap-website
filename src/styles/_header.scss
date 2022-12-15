@@ -197,6 +197,13 @@
       padding: 2vh 0 5vh;
     }
 
+    @include respond(tablet) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+
+      padding: 2vh 0;
+    }
+
     .layer-glow {
       position: absolute;
       width: 69.9rem;
@@ -355,6 +362,11 @@
 
   @include respond(tablet) {
     height: 86rem;
+
+    // display: grid;
+    // grid-template-columns: repeat(7, 1fr);
+    // overflow: scroll;
+    // scroll-snap-type: x mandatory;
   }
 
   @include respond(sm-phone) {
@@ -370,6 +382,11 @@
     opacity: 0;
     transition: all 0.8s;
 
+    // @include respond(tablet) {
+    //   position: relative;
+    //   scroll-snap-align: center;
+    // }
+
     &--active {
       opacity: 1;
     }
@@ -377,6 +394,8 @@
 
   &__container {
     position: relative;
+    width: 100%;
+    // overflow: hidden;
   }
 
   &__dots {

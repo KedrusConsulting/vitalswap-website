@@ -13,7 +13,7 @@ function Merchant() {
         <div data-aos="fade-up" data-aos-duration="2000" className="merchant">
           <div className="merchant__text-box">
             <h2 className="heading--secondary">
-              Do you receive payments as a foreign merchants from Africa?
+              Do you receive payments as a foreign merchant from Africa?
             </h2>
 
             <p>

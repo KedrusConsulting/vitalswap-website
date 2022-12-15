@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FAQCard from "../../../components/FAQCard";
 
 function FAQ() {
+  // useEffect(() => {
+
+  // }, [])
   return (
     <section className="faq__section" id="faq">
       <div className="container">

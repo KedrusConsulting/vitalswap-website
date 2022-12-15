@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useEffect } from "react";
 
 import CurrencyField from "../CurrencyField";
@@ -11,22 +11,44 @@ function CurrencyConverter({ values, onChange }) {
   const [amountToReceive, setAmountToReceive] = useState(0);
   const [rate, setRate] = useState();
 
-  const [ngn, setNgn] = useState(0);
-  const [usd, setUsd] = useState(1);
+  const [currency1, setCurrency1] = useState(0);
+  const [currency2, setCurrency2] = useState(1);
+  const [swap, setSwap] = useState(false);
+
+  const updateCurrency = () => {
+    console.log("updateCurrency");
+
+    setAmountToSend(0);
+    setAmountToReceive(0);
+
+    if (!swap) {
+      setSwap(true);
+      setCurrency2(0);
+      setCurrency1(1);
+    } else {
+      setSwap(false);
+      setCurrency1(0);
+      setCurrency2(1);
+    }
+  };
 
   const handleAmountToSend = (e) => {
+    let receive;
     setAmountToSend(e.target.value);
 
-    const receive = e.target.value / rate.iHaveDollarsIneedNaira;
+    if (!swap) {
+      // Naira to Dollar conversion
+      receive = e.target.value / rate.iHaveNairaIneedDollars;
+    } else {
+      // Dollar to Naira conversion
+      receive = e.target.value * rate.iHaveDollarsIneedNaira;
+    }
+
     setAmountToReceive(receive.toFixed(1));
   };
 
   const handleAmountToReceive = (e) => {
     setAmountToSend(e.target.value);
-  };
-
-  const handleCheckRates = () => {
-    console.log("");
   };
 
   useEffect(() => {
@@ -36,7 +58,6 @@ function CurrencyConverter({ values, onChange }) {
       } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome", {
         headers,
       });
-      console.log(rate);
 
       setRate(rate);
     };
@@ -52,11 +73,10 @@ function CurrencyConverter({ values, onChange }) {
         name="amountToSend"
         id="amountToSend"
         placeholder="0"
-        currency={"NGN"}
         value={amountToSend}
         onChange={handleAmountToSend}
-        handleChange={handleCheckRates}
-        defaultValue={ngn}
+        value2={currency1}
+        onSelectChange={updateCurrency}
       />
 
       <div className="currency__rate">
@@ -69,10 +89,10 @@ function CurrencyConverter({ values, onChange }) {
         name="amountToReceive"
         id="amountToReceive"
         placeholder="0"
-        currency={"USD"}
         value={amountToReceive}
         onChange={handleAmountToReceive}
-        defaultValue={usd}
+        value2={currency2}
+        onSelectChange={updateCurrency}
       />
     </div>
   );

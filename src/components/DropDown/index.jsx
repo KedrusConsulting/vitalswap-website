@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Dropdown } from "semantic-ui-react";
 
 import currency_flag_1 from "../../assets/ng-flag.svg";
 import currency_flag_2 from "../../assets/us-flag.svg";
 
-const CurrencyDropdown = ({ defaultValue, handleChange }) => {
+const CurrencyDropdown = ({ value, handleChange }) => {
   const currrencyOptions = [
     {
       key: "NGN",
@@ -24,7 +24,7 @@ const CurrencyDropdown = ({ defaultValue, handleChange }) => {
     <Dropdown
       inline
       options={currrencyOptions}
-      defaultValue={currrencyOptions[defaultValue].value}
+      value={currrencyOptions[value].value}
       onChange={handleChange}
     />
   );

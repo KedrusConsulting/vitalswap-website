@@ -5,6 +5,19 @@ function FAQCard({ title, body }) {
   const paraRef = useRef();
   const bodyRef = useRef();
 
+  const closeAllFaqs = () => {
+    const faqs = Array.from(document.querySelectorAll(".faq__faq"));
+    const faqsBody = Array.from(document.querySelectorAll(".faq__body"));
+
+    faqs.map((faq, i) => {
+      faq.classList.remove("faq__faq--is-open");
+      faqsBody[i].style.height = 0;
+    });
+
+    // setOpen(false);
+    console.log("close", faqs);
+  };
+
   useEffect(() => {
     if (open) {
       bodyRef.current.style.height = paraRef.current.offsetHeight + "px";
@@ -15,8 +28,14 @@ function FAQCard({ title, body }) {
 
   return (
     <div data-aos="fade-up" data-aos-duration="2000">
-      <div className={`faq__faq faq__faq--${open ? "is-open" : ""}`}>
-        <div className="faq__title" onClick={() => setOpen((prev) => !prev)}>
+      <div className={`faq__faq ${open ? "faq__faq--is-open" : ""}`}>
+        <div
+          className="faq__title"
+          onClick={() => {
+            closeAllFaqs();
+            setOpen((prev) => !prev);
+          }}
+        >
           <h5>{title}</h5>
 
           {!open ? (

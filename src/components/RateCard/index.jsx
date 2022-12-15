@@ -5,7 +5,7 @@ function RateCard({ amtToSend, amtToReceive, rate, currency, symbol }) {
     <div className="rate__card">
       <div className="rate__send">
         <div className="rate__left">
-          <span className="label">Amount to send</span>
+          <span className="label">You get</span>
           <span className="atm">{`${symbol}${amtToSend}`}</span>
         </div>
 
@@ -17,7 +17,7 @@ function RateCard({ amtToSend, amtToReceive, rate, currency, symbol }) {
 
       <div className="rate__receive">
         <div className="rate__left">
-          <span className="label">Amount you'll be pay</span>
+          <span className="label">You pay</span>
           <span className="atm">
             {amtToReceive} <span className="rate__btn">Splittable</span>
           </span>

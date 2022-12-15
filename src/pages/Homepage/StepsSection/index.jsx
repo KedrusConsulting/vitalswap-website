@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import enter_amount_screen from "../../../assets/slider-@1x.png";
 import destination_currency_screen from "../../../assets/slider-2@1x.png";
 import sendto_recip_screen from "../../../assets/slider-3@1x.png";
@@ -7,34 +7,12 @@ function StepsSection() {
   const imgsContainerRef = useRef();
   const cardsContainerRef = useRef();
 
-  // const repositionImg = () => {
-  //   let curImg;
+  const [updateCount, setUpCount] = useState(true);
 
-  //   const imgs = Array.from(
-  //     imgsContainerRef.current.querySelectorAll("[class^=steps__img")
-  //   );
-
-  //   imgs.map((img) => {
-  //     img.classList.remove("steps__img--active");
-  //   });
-
-  //   const curStep = document.querySelector(".steps__card--active").dataset.card;
-  //   const curStepElem = document.querySelector(".steps__card--active");
-
-  //   curImg = document.querySelector(`[data-img="${curStep}"]`);
-
-  //   // const fragment = document.createDocumentFragment();
-  //   // imgs.forEach(function (item) {
-  //   //   fragment.appendChild(item.cloneNode());
-  //   // });
-
-  //   // console.log(fragment.childNodes);
-
-  //   curStepElem.insertAdjacentElement("afterend", curImg);
-  // };
+  let cur = 0,
+    stepsTimer;
 
   useEffect(() => {
-    let cur = 0;
     const stepsCard = Array.from(
       cardsContainerRef.current.querySelectorAll(".steps__card")
     );
@@ -43,13 +21,7 @@ function StepsSection() {
       imgsContainerRef.current.querySelectorAll("[class^=steps__img")
     );
 
-    setInterval(() => {
-      if (cur < stepsCard.length - 1) {
-        cur++;
-      } else {
-        cur = 0;
-      }
-
+    stepsTimer = setInterval(() => {
       stepsCard.map((card, i) => {
         card.classList.remove("steps__card--active");
       });
@@ -58,45 +30,58 @@ function StepsSection() {
         img.classList.remove("steps__img--active");
       });
 
+      if (cur < stepsCard.length - 1) {
+        cur++;
+      } else {
+        cur = 0;
+      }
+
+      console.log("..........");
+      console.log(cur);
+
       stepsCard[cur].classList.add("steps__card--active");
       stepsImg[cur].classList.add("steps__img--active");
     }, 4000);
+
+    return () => clearInterval(stepsTimer);
   }, []);
 
-  // const handleSteps = (e) => {
-  //   const elem = e.target.closest(".steps__card");
-  //   let curImg;
+  const handleSteps = (e) => {
+    const elem = e.target.closest(".steps__card");
+    const stepsCard = Array.from(
+      cardsContainerRef.current.querySelectorAll(".steps__card")
+    );
+    const stepsImg = Array.from(
+      imgsContainerRef.current.querySelectorAll("[class^=steps__img")
+    );
 
-  //   const steps = Array.from(
-  //     cardsContainerRef.current.querySelectorAll(".steps__card")
-  //   );
+    cur = +elem.dataset.card;
 
-  //   const imgs = Array.from(
-  //     imgsContainerRef.current.querySelectorAll("[class^=steps__img")
-  //   );
+    console.log(cur);
 
-  //   if (elem) {
-  //     steps.map((step) => {
-  //       step.classList.remove("steps__card--active");
-  //     });
+    clearInterval(stepsTimer);
+    setInterval((cur) => {
+      stepsCard.map((card, i) => {
+        card.classList.remove("steps__card--active");
+      });
 
-  //     elem.classList.add("steps__card--active");
+      stepsImg.map((img, i) => {
+        img.classList.remove("steps__img--active");
+      });
 
-  //     imgs.map((img) => {
-  //       img.classList.remove("steps__img--active");
+      if (cur < stepsCard.length - 1) {
+        cur++;
+      } else {
+        cur = 0;
+      }
 
-  //       const curStep = document.querySelector(".steps__card--active").dataset
-  //         .card;
-  //       curImg = document.querySelector(`[data-img="${curStep}"]`);
-  //     });
+      console.log("..........");
+      console.log(cur);
 
-  //     curImg?.classList.add("steps__img--active");
-  //   }
-
-  //   // if (window.innerWidth <= "768") {
-  //   //   repositionImg();
-  //   // }
-  // };
+      stepsCard[cur].classList.add("steps__card--active");
+      stepsImg[cur].classList.add("steps__img--active");
+    }, 4000);
+  };
 
   return (
     <section className="steps__section" id="how-it-works">
@@ -113,12 +98,12 @@ function StepsSection() {
 
         <div
           className="steps__container"
-          // onClick={handleSteps}
+          onClick={handleSteps}
           ref={cardsContainerRef}
         >
           <div className="steps__text-box">
             <div
-              data-card="1"
+              data-card="0"
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__card steps__card--active"
@@ -136,7 +121,7 @@ function StepsSection() {
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__img--mob steps__img--1"
-              data-mob="1"
+              data-mob="0"
             >
               <img
                 src={enter_amount_screen}
@@ -145,7 +130,7 @@ function StepsSection() {
             </div>
 
             <div
-              data-card="2"
+              data-card="1"
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__card"
@@ -163,7 +148,7 @@ function StepsSection() {
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__img--mob steps__img--2"
-              data-mob="2"
+              data-mob="1"
             >
               <img
                 src={destination_currency_screen}
@@ -172,7 +157,7 @@ function StepsSection() {
             </div>
 
             <div
-              data-card="3"
+              data-card="2"
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__card"
@@ -188,7 +173,7 @@ function StepsSection() {
               data-aos="fade-up"
               data-aos-duration="2000"
               className="steps__img--mob steps__img--3"
-              data-mob="3"
+              data-mob="2"
             >
               <img
                 src={sendto_recip_screen}
@@ -203,21 +188,21 @@ function StepsSection() {
             data-aos-duration="1000"
             className="steps__img-box"
           >
-            <div className="steps__img--1 steps__img--active" data-img="1">
+            <div className="steps__img--1 steps__img--active" data-img="0">
               <img
                 src={enter_amount_screen}
                 alt="Vitalswap send money app screen"
               />
             </div>
 
-            <div className="steps__img--2" data-img="2">
+            <div className="steps__img--2" data-img="1">
               <img
                 src={destination_currency_screen}
                 alt="Vitalswap destination currency app screen"
               />
             </div>
 
-            <div className="steps__img--3" data-img="3">
+            <div className="steps__img--3" data-img="2">
               <img
                 src={sendto_recip_screen}
                 alt="Vitalswap send to recipient app screen"
