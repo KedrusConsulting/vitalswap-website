@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import CurrencyField from "../CurrencyField";
 
 import { headers } from "../../utils/headers";
+import CurrencyFormat from "react-currency-format";
 
 function CurrencyConverter({ values, onChange }) {
   const [amountToSend, setAmountToSend] = useState(0);
@@ -14,6 +15,8 @@ function CurrencyConverter({ values, onChange }) {
   const [currency1, setCurrency1] = useState(0);
   const [currency2, setCurrency2] = useState(1);
   const [swap, setSwap] = useState(false);
+
+  const currencies = ["NGN", "USD"];
 
   const updateCurrency = () => {
     console.log("updateCurrency");
@@ -50,6 +53,12 @@ function CurrencyConverter({ values, onChange }) {
   const handleAmountToReceive = (e) => {
     setAmountToSend(e.target.value);
   };
+
+  const numberFormat = (amount, currency) =>
+    new Intl.NumberFormat(navigator.language, {
+      currency: currency,
+      style: "currency",
+    }).format(amount);
 
   useEffect(() => {
     const getRate = async () => {

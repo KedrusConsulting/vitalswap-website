@@ -61,7 +61,15 @@
 
   &__useful-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+
+      @include respond(phone) {
+        margin-right: 0;
+      }
+    }
 
     @include respond(phone) {
       flex-direction: column;

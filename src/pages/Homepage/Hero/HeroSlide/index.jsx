@@ -158,7 +158,7 @@ export function HeroSlide3() {
     <div className="hero__container hero__container--3">
       <div className="hero__text-box">
         <h1 className="heading--primary">
-          Realtime instant exchange and credit.
+          Realtime instant exchange and payment.
         </h1>
         <p className="text__lg">
           Exchange your dollars to naira or naira to dollars at the best market

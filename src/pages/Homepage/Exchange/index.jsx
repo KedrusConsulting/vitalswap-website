@@ -27,7 +27,7 @@ function Exchange() {
         className="exchange__text-box"
       >
         <h2 className="heading--secondary">Get the best exchange rates</h2>
-        <p>Enjoy competitive rates from multiple dealers</p>
+        <p>Enjoy the best rates from the marketplace.</p>
 
         <div className="form_box-mob">
           <Formik initialValues={initialValues}>

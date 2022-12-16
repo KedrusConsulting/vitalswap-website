@@ -827,6 +827,14 @@
   &__faq--is-open &__title {
     margin-bottom: 3.2rem;
   }
+
+  &__open.hidden {
+    display: none;
+  }
+
+  &__close.hidden {
+    display: none;
+  }
 }
 
 /*************************************************

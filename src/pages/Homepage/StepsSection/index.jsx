@@ -36,8 +36,8 @@ function StepsSection() {
         cur = 0;
       }
 
-      console.log("..........");
-      console.log(cur);
+      // console.log("..........");
+      // console.log(cur);
 
       stepsCard[cur].classList.add("steps__card--active");
       stepsImg[cur].classList.add("steps__img--active");
@@ -58,8 +58,8 @@ function StepsSection() {
 
     cur = +elem.dataset.card;
 
-    console.log("------------------");
-    console.log(cur);
+    // console.log("------------------");
+    // console.log(cur);
 
     clearInterval(stepsTimer);
 
@@ -91,8 +91,8 @@ function StepsSection() {
         cur = 0;
       }
 
-      console.log("**********");
-      console.log(cur);
+      // console.log("**********");
+      // console.log(cur);
 
       stepsCard[cur].classList.add("steps__card--active");
       stepsImg[cur].classList.add("steps__img--active");
