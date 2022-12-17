@@ -232,7 +232,7 @@ export function HeroSlide4() {
         </div>
       </div>
 
-      <div className="hero__img-box">
+      <div className="hero__img-box mt">
         <div className="layer-glow "></div>
         <img src={hero_img04} alt="Hero img" />
 

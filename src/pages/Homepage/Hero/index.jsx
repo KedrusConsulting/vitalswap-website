@@ -2,10 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
 
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 import cash_app from "../../../assets/Cash App - Dollar - Full 1@2x.png";
 import flutterwave from "../../../assets/Flutterwave 1@2x.png";
@@ -23,48 +21,48 @@ function Hero() {
   const sliderRef = useRef();
   const dotRef = useRef();
 
-  const goToSlide = function (slide) {
-    sliderRef.current
-      ?.querySelectorAll(".slider__slide")
-      .forEach((s, i) => s.classList.remove("slider__slide--active"));
+  // const goToSlide = function (slide) {
+  //   sliderRef.current
+  //     ?.querySelectorAll(".slider__slide")
+  //     .forEach((s, i) => s.classList.remove("slider__slide--active"));
 
-    dotRef.current
-      ?.querySelectorAll(".slider__dot")
-      .forEach((s, i) => s.classList.remove("slider__dot--active"));
+  //   dotRef.current
+  //     ?.querySelectorAll(".slider__dot")
+  //     .forEach((s, i) => s.classList.remove("slider__dot--active"));
 
-    sliderRef.current
-      ?.querySelectorAll(".slider__slide")
-      [slide].classList.add("slider__slide--active");
+  //   sliderRef.current
+  //     ?.querySelectorAll(".slider__slide")
+  //     [slide].classList.add("slider__slide--active");
 
-    dotRef.current
-      ?.querySelectorAll(".slider__dot")
-      [slide].classList.add("slider__dot--active");
-  };
+  //   dotRef.current
+  //     ?.querySelectorAll(".slider__dot")
+  //     [slide].classList.add("slider__dot--active");
+  // };
 
-  let sliderTimer = setInterval(() => {
-    if (cur < 3) {
-      cur++;
-    } else {
-      cur = 0;
-    }
+  // let sliderTimer = setInterval(() => {
+  //   if (cur < 3) {
+  //     cur++;
+  //   } else {
+  //     cur = 0;
+  //   }
 
-    goToSlide(cur);
-  }, 5000);
+  //   goToSlide(cur);
+  // }, 5000);
 
-  const pagination = (e) => {
-    const elem = e.target.closest(".slider__dot");
-    cur = Number(elem.dataset.dot);
-    goToSlide(cur);
-    clearInterval(sliderTimer);
-    sliderTimer = setInterval(() => {
-      if (cur < 3) {
-        cur++;
-      } else {
-        cur = 0;
-      }
-      goToSlide(cur);
-    }, 5000);
-  };
+  // const pagination = (e) => {
+  //   const elem = e.target.closest(".slider__dot");
+  //   cur = Number(elem.dataset.dot);
+  //   goToSlide(cur);
+  //   clearInterval(sliderTimer);
+  //   sliderTimer = setInterval(() => {
+  //     if (cur < 3) {
+  //       cur++;
+  //     } else {
+  //       cur = 0;
+  //     }
+  //     goToSlide(cur);
+  //   }, 5000);
+  // };
 
   // useEffect(() => {
   //   const carousel = new Swipe(document.querySelector(".slider__container"), {
@@ -75,7 +73,7 @@ function Hero() {
 
   return (
     <div className="hero">
-      <div className="slider__container">
+      {/* <div className="slider__container">
         <div className="slider" ref={sliderRef}>
           <div className="slider__slide slider__slide--active">
             <HeroSlide1 />
@@ -102,18 +100,43 @@ function Hero() {
             <div className="slider__dot" data-dot="3"></div>
           </div>
         </div>
+      </div> */}
+
+      <div className="hero__wrapper">
+        <Swiper
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <div className="hero__slide">
+              <HeroSlide1 />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="hero__slide">
+              <HeroSlide2 />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="hero__slide">
+              <HeroSlide3 />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="hero__slide">
+              <HeroSlide4 />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
-      {/* <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper> */}
 
       <div className="powered-by">
         <h4>Powered By</h4>
