@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BlogCard from "../../../components/BlogCard";
 
 import blog_img from "../../../assets/blog-img-1.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Blog() {
+  const [featuredBlogs, setFeaturedBlogs] = useState();
+
+  useEffect(() => {
+    const faqs = async () => {
+      try {
+        const {
+          data: { featuredBlogPosts },
+        } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
+        setFeaturedBlogs(featuredBlogPosts);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    faqs();
+  }, []);
+
   return (
     <section className="blog__section" id="blog">
       <div className="container">
@@ -14,7 +32,11 @@ function Blog() {
           className="blog__caption"
         >
           <h2 className="heading--secondary">Read more about our product</h2>
-          <Link to="#" className="btn btn--white-outline">
+          <a
+            target="_blank"
+            href="https://vitalswap.com/blog"
+            className="btn btn--white-outline"
+          >
             <span>View Blog</span>
 
             <svg
@@ -31,30 +53,19 @@ function Blog() {
                 fill="#343947"
               />
             </svg>
-          </Link>
+          </a>
         </div>
 
         <div className="blog__grid">
-          <BlogCard
-            route={"#"}
-            title="Introducing Swap by Vitalswap: A new way of Exchanging Money A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new With funds in your wallet, you can swap it for another currency with a click of a button and your new"
-            imageUrl={blog_img}
-          />
-
-          <BlogCard
-            route={"#"}
-            title="Introducing Swap by Vitalswap: A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new"
-            imageUrl={blog_img}
-          />
-
-          <BlogCard
-            route={"#"}
-            title="Introducing Swap by Vitalswap: A new way of Exchanging Money"
-            summary="With funds in your wallet, you can swap it for another currency with a click of a button and your new"
-            imageUrl={blog_img}
-          />
+          {featuredBlogs?.map((featuredBlog, i) => (
+            <BlogCard
+              id={i}
+              route={featuredBlog.postUrl}
+              title={featuredBlog.title}
+              summary={featuredBlog.content}
+              imageUrl={featuredBlog.imageUrl}
+            />
+          ))}
         </div>
       </div>
     </section>

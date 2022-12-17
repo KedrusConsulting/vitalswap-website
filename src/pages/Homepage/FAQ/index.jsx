@@ -1,8 +1,10 @@
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import FAQCard from "../../../components/FAQCard";
 
 function FAQ() {
   const [open, setOpen] = useState(false);
+  const [faqs, setFaqs] = useState();
   const faqContainerRef = useRef();
 
   console.log(open);
@@ -63,6 +65,21 @@ function FAQ() {
     );
   }, [open]);
 
+  useEffect(() => {
+    const faqs = async () => {
+      try {
+        const {
+          data: { faq },
+        } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
+        setFaqs(faq);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    faqs();
+  }, []);
+
   return (
     <section className="faq__section" id="faq">
       <div className="container">
@@ -82,47 +99,9 @@ function FAQ() {
           ref={faqContainerRef}
           onClick={() => setOpen((prev) => !prev)}
         >
-          <FAQCard
-            title={"What is Vitalswap?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally."
-            // handleOpen={toggle}
-            // open={open}
-          />
-
-          <FAQCard
-            title={"What is your transaction fee?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally. VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally."
-            // handleOpen={toggle}
-            // open={open}
-          />
-
-          <FAQCard
-            title={"How does it work?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally. VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally."
-            // handleOpen={toggle}
-            // open={open}
-          />
-
-          <FAQCard
-            title={"How fast can I withdraw to my bank?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally. VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally."
-            // handleOpen={toggle}
-            // open={open}
-          />
-
-          <FAQCard
-            title={"How long does it take to send money or make Payment?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally. "
-            // handleOpen={toggle}
-            // open={open}
-          />
-
-          <FAQCard
-            title={"How do I download the app?"}
-            body="VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally. VitalSwap provides an all in one payment solution for anyone who needs to send money and make payments internationally and locally."
-            // handleOpen={toggle}
-            // open={open}
-          />
+          {faqs?.map((faq) => (
+            <FAQCard key={faq.id} title={faq.title} body={faq.content} />
+          ))}
         </div>
       </div>
     </section>

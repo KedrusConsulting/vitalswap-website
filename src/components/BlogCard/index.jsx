@@ -10,7 +10,7 @@ function BlogCard({ route, title, summary, imageUrl }) {
       <div className="blog__content">
         <h3 className="heading--teritary">{title}</h3>
         <p>{summary}</p>
-        <Link to={route} className="btn btn--white-outline">
+        <a href={route} target="_blank" className="btn btn--white-outline">
           <span>Read More</span>
 
           <svg
@@ -27,7 +27,7 @@ function BlogCard({ route, title, summary, imageUrl }) {
               fill="#343947"
             />
           </svg>
-        </Link>
+        </a>
       </div>
     </article>
   );
