@@ -62,7 +62,7 @@ function Process() {
           </svg>
 
           <h4 className="heading--quad">Safe Deals</h4>
-          <p>All transactions are carefully monitored to ensure zero fraud.</p>
+          <p>All transactions are carefully processed to ensure zero fraud.</p>
         </div>
 
         <div data-aos="fade-up" data-aos-duration="2000" className="feature">

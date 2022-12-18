@@ -1,4 +1,5 @@
 import React from "react";
+import Cleave from "cleave.js/react";
 import CurrencyDropdown from "../DropDown";
 
 function CurrencyField({
@@ -16,12 +17,23 @@ function CurrencyField({
     <fieldset className="currency__converter">
       <div className="currency__input">
         <label htmlFor={id}>{label}</label>
-        <input
+        {/* <input
           type={type}
           name={name}
           id={id}
           autoComplete="off"
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        /> */}
+
+        <Cleave
+          // type={"text"}
+          name={name}
+          id={id}
+          autoComplete="off"
+          placeholder={placeholder}
+          options={{ numeral: true, numeralThousandsGroupStyle: "thousand" }}
           value={value}
           onChange={onChange}
         />

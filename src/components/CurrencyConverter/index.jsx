@@ -37,21 +37,37 @@ function CurrencyConverter({ values, onChange }) {
 
   const handleAmountToSend = (e) => {
     let receive;
-    setAmountToSend(e.target.value);
+
+    const input = e.target.value.replace(/[^0-9 ]/g, "");
+    setAmountToSend(+input);
 
     if (!swap) {
       // Naira to Dollar conversion
-      receive = e.target.value / rate.iHaveNairaIneedDollars;
+      receive = +input / rate.iHaveNairaIneedDollars;
     } else {
       // Dollar to Naira conversion
-      receive = e.target.value * rate.iHaveDollarsIneedNaira;
+      receive = +input * rate.iHaveDollarsIneedNaira;
     }
 
-    setAmountToReceive(receive.toFixed(1));
+    setAmountToReceive(receive.toFixed(2));
   };
 
   const handleAmountToReceive = (e) => {
-    setAmountToSend(e.target.value);
+    let send;
+    const input = e.target.value.replace(/[^0-9 ]/g, "");
+    setAmountToReceive(+input);
+
+    if (swap) {
+      // Naira to Dollar conversion
+      send = +input / rate.iHaveNairaIneedDollars;
+    } else {
+      // Dollar to Naira conversion
+      send = rate.iHaveDollarsIneedNaira * +input;
+    }
+
+    console.log(send);
+
+    setAmountToSend(send.toFixed(2));
   };
 
   const numberFormat = (amount, currency) =>
@@ -78,7 +94,7 @@ function CurrencyConverter({ values, onChange }) {
     <div className="currency__wrapper">
       <CurrencyField
         label="Amount you send"
-        type="number"
+        // type="number"
         name="amountToSend"
         id="amountToSend"
         placeholder="0"
@@ -94,7 +110,7 @@ function CurrencyConverter({ values, onChange }) {
 
       <CurrencyField
         label="Amount you receive"
-        type="number"
+        // type="number"
         name="amountToReceive"
         id="amountToReceive"
         placeholder="0"

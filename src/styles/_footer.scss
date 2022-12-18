@@ -17,7 +17,7 @@
 
   &__logo {
     @include respond(phone) {
-      max-width: 120px;
+      max-width: 130px;
     }
   }
 
