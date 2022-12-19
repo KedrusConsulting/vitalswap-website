@@ -21,6 +21,12 @@ export function HeroSlide1() {
   const [rateUSD, setUSDRate] = useState();
   const [rateNaria, setNariaRate] = useState();
 
+  const numberFormat = (amount, currency) =>
+    new Intl.NumberFormat(navigator.language, {
+      currency: currency,
+      style: "currency",
+    }).format(amount);
+
   useEffect(() => {
     const getRate = async () => {
       const {
@@ -83,16 +89,20 @@ export function HeroSlide1() {
         <div className="rate__cards">
           <RateCard
             symbol={"₦"}
-            amtToSend={50000}
-            amtToReceive={`$${(50000 / rateUSD).toFixed(2)}`}
+            amtToSend={(50000).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+            amtToReceive={`$${(50000 / rateUSD)
+              .toFixed(2)
+              .replace(/\d(?=(\d{3})+\.)/g, "$&,")}`}
             currency={USD}
             rate={rateUSD}
           />
 
           <RateCard
             symbol={"$"}
-            amtToSend={1000}
-            amtToReceive={`₦${(1000 * rateNaria).toFixed(2)}`}
+            amtToSend={(1000).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+            amtToReceive={`₦${(1000 * rateNaria)
+              .toFixed(2)
+              .replace(/\d(?=(\d{3})+\.)/g, "$&,")}`}
             currency={NGN}
             rate={rateNaria}
           />
