@@ -15,41 +15,43 @@ import { HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4 } from "./HeroSlide";
 
 function Hero() {
   return (
-    <div className="hero">
-      <div className="hero__wrapper">
-        <Swiper
-          loop={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination, Autoplay]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <div className="hero__slide">
-              <HeroSlide1 />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="hero__slide">
-              <HeroSlide2 />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="hero__slide">
-              <HeroSlide3 />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="hero__slide">
-              <HeroSlide4 />
-            </div>
-          </SwiperSlide>
-        </Swiper>
+    <div className="header__hero">
+      <div className="hero">
+        <div className="hero__wrapper">
+          <Swiper
+            loop={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className="hero__slide">
+                <HeroSlide1 />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="hero__slide">
+                <HeroSlide2 />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="hero__slide">
+                <HeroSlide3 />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="hero__slide">
+                <HeroSlide4 />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
 
       <div className="powered-by">
