@@ -5,7 +5,7 @@ const AppContext = createContext();
 export const useApp = () => useContext(AppContext);
 
 const AppProvider = ({ children }) => {
-  const [rate, setRate] = useState();
+  const [rate, setRate] = useState({});
   const [faqs, setFaqs] = useState();
   const [featuredBlogs, setFeaturedBlogs] = useState();
 

@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 import apple_store from "../../../../assets/apple-store@1.5x.png";
 import google_play from "../../../../assets/google-play@1.5x.png";
 
-import hero_img01 from "../../../../assets/hero-img@1x.png";
-import hero_img02 from "../../../../assets/hero-img-2@2x.png";
-import hero_img03 from "../../../../assets/hero-img-3@2x.png";
-import hero_img04 from "../../../../assets/hero-img-4@2x.png";
+import hero_img01 from "../../../../assets/hero-img@2x.webp";
+import hero_img02 from "../../../../assets/hero-img-2@2x.webp";
+import hero_img03 from "../../../../assets/hero-img-3@2x.webp";
+import hero_img04 from "../../../../assets/hero-img-4@2x.webp";
 import RateCard from "../../../../components/RateCard";
 import { useEffect } from "react";
 import { useApp } from "../../../../context/app";
@@ -36,7 +36,7 @@ export function HeroSlide1() {
     };
 
     getRate();
-  }, []);
+  }, [rate]);
 
   return (
     <div className="hero__container hero__container--1">
