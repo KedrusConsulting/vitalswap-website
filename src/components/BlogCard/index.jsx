@@ -11,7 +11,7 @@ function BlogCard({ route, title, summary, imageUrl }) {
         <h3 className="heading--teritary">{title}</h3>
         <p>{summary}</p>
         <a href={route} target="_blank" className="btn btn--white-outline">
-          <span>Read More</span>
+          <span aria-label="link text">Read More</span>
 
           <svg
             width="16"
