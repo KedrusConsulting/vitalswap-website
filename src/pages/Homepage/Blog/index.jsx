@@ -1,27 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BlogCard from "../../../components/BlogCard";
 
-import blog_img from "../../../assets/blog-img-1.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
+
+import { useApp } from "../../../context/app";
 
 function Blog() {
-  const [featuredBlogs, setFeaturedBlogs] = useState();
-
-  useEffect(() => {
-    const faqs = async () => {
-      try {
-        const {
-          data: { featuredBlogPosts },
-        } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
-        setFeaturedBlogs(featuredBlogPosts);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    faqs();
-  }, []);
+  const { featuredBlogs } = useApp();
 
   return (
     <section className="blog__section" id="blog">
@@ -59,6 +44,7 @@ function Blog() {
         <div className="blog__grid">
           {featuredBlogs?.map((featuredBlog, i) => (
             <BlogCard
+              key={i}
               id={i}
               route={featuredBlog.postUrl}
               title={featuredBlog.title}

@@ -7,33 +7,29 @@ import { Link } from "react-router-dom";
 import apple_store from "../../../../assets/apple-store@1.5x.png";
 import google_play from "../../../../assets/google-play@1.5x.png";
 
-// import hero_img01 from "../../../assets/hero-img@2x.png";
 import hero_img01 from "../../../../assets/hero-img@1x.png";
 import hero_img02 from "../../../../assets/hero-img-2@2x.png";
 import hero_img03 from "../../../../assets/hero-img-3@2x.png";
 import hero_img04 from "../../../../assets/hero-img-4@2x.png";
 import RateCard from "../../../../components/RateCard";
 import { useEffect } from "react";
-import axios from "axios";
-// import Control from "react-s elect/dist/declarations/src/components/Control";
+import { useApp } from "../../../../context/app";
 
 export function HeroSlide1() {
+  const { rate } = useApp();
   const [rateUSD, setUSDRate] = useState();
   const [rateNaria, setNariaRate] = useState();
 
-  const numberFormat = (amount, currency) =>
-    new Intl.NumberFormat(navigator.language, {
-      currency: currency,
-      style: "currency",
-    }).format(amount);
+  // const numberFormat = (amount, currency) =>
+  //   new Intl.NumberFormat(navigator.language, {
+  //     currency: currency,
+  //     style: "currency",
+  //   }).format(amount);
 
   useEffect(() => {
     const getRate = async () => {
-      const {
-        data: {
-          rate: { iHaveDollarsIneedNaira, iHaveNairaIneedDollars },
-        },
-      } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
+      const { iHaveDollarsIneedNaira, iHaveNairaIneedDollars } = rate;
+      console.log(iHaveDollarsIneedNaira, iHaveNairaIneedDollars);
 
       setUSDRate(iHaveNairaIneedDollars);
       setNariaRate(iHaveDollarsIneedNaira);
@@ -41,6 +37,7 @@ export function HeroSlide1() {
 
     getRate();
   }, []);
+
   return (
     <div className="hero__container hero__container--1">
       <div className="hero__text-box">

@@ -1,19 +1,18 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import FAQCard from "../../../components/FAQCard";
+import { useApp } from "../../../context/app";
 
 function FAQ() {
-  const [open, setOpen] = useState(false);
-  const [faqs, setFaqs] = useState();
-  const faqContainerRef = useRef();
+  const { faqs } = useApp();
 
-  console.log(open);
+  const [open, setOpen] = useState(false);
+
+  const faqContainerRef = useRef();
 
   useEffect(() => {
     faqContainerRef.current.addEventListener("click", (e) => {
       const elem = e.target.closest(".faq__title");
-
-      // setOpen((prev) => !prev);
 
       if (elem) {
         const parent = elem.parentElement;
@@ -28,13 +27,6 @@ function FAQ() {
           faq.querySelector(".faq__open").classList.remove("hidden");
           faq.querySelector(".faq__close").classList.add("hidden");
         });
-
-        // parent.classList.add("faq__faq--is-open");
-        // parent.querySelector(".faq__body").style.height =
-        //   parent.querySelector(".faq__answer").offsetHeight + "px";
-
-        // parent.querySelector(".faq__open").classList.add("hidden");
-        // parent.querySelector(".faq__close").classList.remove("hidden");
 
         if (!open) {
           parent.classList.add("faq__faq--is-open");
@@ -64,21 +56,6 @@ function FAQ() {
       console.log("removed")
     );
   }, [open]);
-
-  useEffect(() => {
-    const faqs = async () => {
-      try {
-        const {
-          data: { faq },
-        } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome");
-        setFaqs(faq);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    faqs();
-  }, []);
 
   return (
     <section className="faq__section" id="faq">

@@ -9,12 +9,15 @@ import "swiper/css/pagination";
 import "semantic-ui-css/semantic.min.css";
 import "./styles/index.scss";
 import "aos/dist/aos.css";
+import AppProvider from "./context/app";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ScrollToTop />
-      <App />
+      <AppProvider>
+        <ScrollToTop />
+        <App />
+      </AppProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

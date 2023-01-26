@@ -6,11 +6,12 @@ import CurrencyField from "../CurrencyField";
 
 import { headers } from "../../utils/headers";
 import CurrencyFormat from "react-currency-format";
+import { useApp } from "../../context/app";
 
 function CurrencyConverter({ values, onChange }) {
+  const { rate } = useApp();
   const [amountToSend, setAmountToSend] = useState(0);
   const [amountToReceive, setAmountToReceive] = useState(0);
-  const [rate, setRate] = useState();
 
   const [currency1, setCurrency1] = useState(0);
   const [currency2, setCurrency2] = useState(1);
@@ -42,11 +43,11 @@ function CurrencyConverter({ values, onChange }) {
     setAmountToSend(+input);
 
     if (!swap) {
-      // Naira to Dollar conversion
-      receive = +input / rate.iHaveNairaIneedDollars;
-    } else {
       // Dollar to Naira conversion
       receive = +input * rate.iHaveDollarsIneedNaira;
+    } else {
+      // Naira to Dollar conversion
+      receive = +input / rate.iHaveNairaIneedDollars;
     }
 
     setAmountToReceive(receive.toFixed(2));
@@ -58,11 +59,11 @@ function CurrencyConverter({ values, onChange }) {
     setAmountToReceive(+input);
 
     if (swap) {
-      // Naira to Dollar conversion
-      send = +input / rate.iHaveNairaIneedDollars;
-    } else {
       // Dollar to Naira conversion
       send = rate.iHaveDollarsIneedNaira * +input;
+    } else {
+      // Naira to Dollar conversion
+      send = +input / rate.iHaveNairaIneedDollars;
     }
 
     console.log(send);
@@ -70,25 +71,11 @@ function CurrencyConverter({ values, onChange }) {
     setAmountToSend(send.toFixed(2));
   };
 
-  const numberFormat = (amount, currency) =>
-    new Intl.NumberFormat(navigator.language, {
-      currency: currency,
-      style: "currency",
-    }).format(amount);
-
-  useEffect(() => {
-    const getRate = async () => {
-      const {
-        data: { rate },
-      } = await axios.get("https://vitalswap.com/test/api_v2/utils/webHome", {
-        headers,
-      });
-
-      setRate(rate);
-    };
-
-    getRate();
-  }, []);
+  // const numberFormat = (amount, currency) =>
+  //   new Intl.NumberFormat(navigator.language, {
+  //     currency: currency,
+  //     style: "currency",
+  //   }).format(amount);
 
   return (
     <div className="currency__wrapper">

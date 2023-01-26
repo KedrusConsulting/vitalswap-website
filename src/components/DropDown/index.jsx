@@ -7,16 +7,17 @@ import currency_flag_2 from "../../assets/us-flag.svg";
 const CurrencyDropdown = ({ value, handleChange }) => {
   const currrencyOptions = [
     {
-      key: "NGN",
-      text: "NGN",
-      value: "NGN",
-      image: { avatar: true, src: currency_flag_1 },
-    },
-    {
       key: "USD",
       text: "USD",
       value: "USD",
       image: { avatar: true, src: currency_flag_2 },
+    },
+
+    {
+      key: "NGN",
+      text: "NGN",
+      value: "NGN",
+      image: { avatar: true, src: currency_flag_1 },
     },
   ];
 
