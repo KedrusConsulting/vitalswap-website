@@ -4,10 +4,10 @@ import USD from "../../../../assets/us-svg.svg";
 import NGN from "../../../../assets/ng-svg.svg";
 
 import { Link } from "react-router-dom";
-import apple_store from "../../../../assets/apple-store@1.5x.png";
-import google_play from "../../../../assets/google-play@1.5x.png";
+import apple_store from "../../../../assets/apple-store@1.5x.webp";
+import google_play from "../../../../assets/google-play@1.5x.webp";
 
-import hero_img01 from "../../../../assets/hero-img@2x.webp";
+import hero_img01 from "../../../../assets/hero-img@1x.webp";
 import hero_img02 from "../../../../assets/hero-img-2@2x.webp";
 import hero_img03 from "../../../../assets/hero-img-3@2x.webp";
 import hero_img04 from "../../../../assets/hero-img-4@2x.webp";

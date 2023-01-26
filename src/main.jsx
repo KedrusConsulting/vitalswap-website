@@ -9,7 +9,10 @@ import "swiper/css/pagination";
 import "semantic-ui-css/semantic.min.css";
 import "./styles/index.scss";
 import "aos/dist/aos.css";
+
+lazy();
 import AppProvider from "./context/app";
+import { lazy } from "react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import enter_amount_screen from "../../../assets/slider-@1x.png";
-import destination_currency_screen from "../../../assets/slider-2@1x.png";
-import sendto_recip_screen from "../../../assets/slider-3@1x.png";
+
+import enter_amount_screen from "../../../assets/slider-@1x.webp";
+import destination_currency_screen from "../../../assets/slider-2@1x.webp";
+import sendto_recip_screen from "../../../assets/slider-3@1x.webp";
 
 function StepsSection() {
   const imgsContainerRef = useRef();

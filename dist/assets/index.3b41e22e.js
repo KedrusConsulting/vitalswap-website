@@ -1,0 +1,1 @@
+import{a as e,j as d}from"./index.4defce7d.js";function o({icon:a,label:r,bgIcon:s}){return e("div",{"data-aos":"fade-up","data-aos-duration":"2000",className:"features__card",children:[a,d("p",{children:r}),s]})}export{o as F};

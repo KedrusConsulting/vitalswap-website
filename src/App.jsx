@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import AOS from "aos";
 
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import Homepage from "./pages/Homepage";
-import SignUp from "./pages/SignUp";
+import Loadable from "./components/Loadable";
+
+const HomePage = Loadable(lazy(() => import("./pages/Homepage")));
+const SignUp = Loadable(lazy(() => import("./pages/SignUp")));
+const Terms = Loadable(lazy(() => import("./pages/Terms")));
+const Privacy = Loadable(lazy(() => import("./pages/Privacy")));
 
 function App() {
   //useEffect
@@ -18,7 +20,7 @@ function App() {
   return (
     <div className="vitalswap">
       <Routes>
-        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/" element={<HomePage />} />
         <Route exact path="/terms" element={<Terms />} />
         <Route exact path="/privacy" element={<Privacy />} />
         <Route exact path="/signup" element={<SignUp />} />

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import apple_store from "../../../assets/apple-store@1.5x.png";
-import google_play from "../../../assets/google-play@1.5x.png";
-import app_screen_1 from "../../../assets/app-screen.png";
+import apple_store from "../../../assets/apple-store@1.5x.webp";
+import google_play from "../../../assets/google-play@1.5x.webp";
+import app_screen_1 from "../../../assets/app-screen.webp";
 
 function Marketplace() {
   return (
