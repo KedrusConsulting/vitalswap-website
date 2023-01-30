@@ -39,9 +39,34 @@ function Privacy() {
             </p>
 
             <p>
-              We may keep e-mail address, Full Name, Bank Account Number, Credit
-              and Debit card details, address, date of birth and any other data
-              that you provide while using the features of this app or website.
+              We may collect e-mail address, Full Name, Bank Account Number,
+              Credit and Debit card details, address, contact, contact list,
+              images, selfie, date of birth and any other data that you provide
+              while using the features of this app or website.
+            </p>
+
+            <p>
+              If you provide your personal data such as email or phone number,
+              such data will be used to contact you as part of the functionality
+              of our services.
+            </p>
+
+            <p>
+              Images and Identification documents: We may collect copies of your
+              identification documents and images, such as your driver's license
+              or passport, for verification and KYC (know your customer)
+              purposes.
+            </p>
+
+            <p>
+              Selfie: We may collect a selfie of you for verification and KYC
+              purposes.
+            </p>
+
+            <p>
+              Contact list: We may collect information about your contacts from
+              your phone's contact list if you choose to import this information
+              into the Service.
             </p>
 
             <p>
@@ -52,7 +77,7 @@ function Privacy() {
 
             <p>
               We may share all or part of your data with 3rd party as part of
-              the functionality of our services.
+              the functionality of our services
             </p>
 
             <p>
