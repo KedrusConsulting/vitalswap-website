@@ -1,12 +1,9 @@
-import axios from "axios";
-import React, { useState, useContext } from "react";
-import { useEffect } from "react";
+import React, { Fragment, useState } from "react";
 
 import CurrencyField from "../CurrencyField";
-
-import { headers } from "../../utils/headers";
-import CurrencyFormat from "react-currency-format";
 import { useApp } from "../../context/app";
+
+import { IoSwapVertical } from "react-icons/io5";
 
 function CurrencyConverter({ values, onChange }) {
   const { rate } = useApp();
@@ -17,14 +14,14 @@ function CurrencyConverter({ values, onChange }) {
   const [currency2, setCurrency2] = useState(1);
   const [swap, setSwap] = useState(false);
 
-  const currencies = ["NGN", "USD"];
-
   const updateCurrency = () => {
-    console.log("updateCurrency");
-
     setAmountToSend(0);
     setAmountToReceive(0);
 
+    swapCurrency();
+  };
+
+  const swapCurrency = () => {
     if (!swap) {
       setSwap(true);
       setCurrency2(0);
@@ -34,6 +31,13 @@ function CurrencyConverter({ values, onChange }) {
       setCurrency1(0);
       setCurrency2(1);
     }
+  };
+
+  const swapState = () => {
+    const aTemp = amountToSend;
+    const bTemp = amountToReceive;
+    setAmountToSend(bTemp);
+    setAmountToReceive(aTemp);
   };
 
   const handleAmountToSend = (e) => {
@@ -71,12 +75,6 @@ function CurrencyConverter({ values, onChange }) {
     setAmountToSend(send.toFixed(2));
   };
 
-  // const numberFormat = (amount, currency) =>
-  //   new Intl.NumberFormat(navigator.language, {
-  //     currency: currency,
-  //     style: "currency",
-  //   }).format(amount);
-
   return (
     <div className="currency__wrapper">
       <CurrencyField
@@ -91,8 +89,20 @@ function CurrencyConverter({ values, onChange }) {
         onSelectChange={updateCurrency}
       />
 
-      <div className="currency__rate">
-        <span>{`1 USD = ${rate?.iHaveDollarsIneedNaira} NGN`}</span>
+      <div className="currency__flex">
+        <div className="currency__rate">
+          <span>{`1 USD = ${rate?.iHaveDollarsIneedNaira} NGN`}</span>
+        </div>
+
+        <div
+          className="currency__swap"
+          onClick={() => {
+            swapCurrency();
+            swapState();
+          }}
+        >
+          <IoSwapVertical size={24} color="#04396d" />
+        </div>
       </div>
 
       <CurrencyField

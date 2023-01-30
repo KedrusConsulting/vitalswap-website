@@ -158,7 +158,21 @@
     color: var(--black-500-base);
   }
 
-  &__icon {
+  &__flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__swap {
+    background-color: #fff;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 }
 
