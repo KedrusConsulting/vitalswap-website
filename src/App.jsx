@@ -2,7 +2,6 @@ import React, { useEffect, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import AOS from "aos";
-
 import Loadable from "./components/Loadable";
 
 const HomePage = Loadable(lazy(() => import("./pages/Homepage")));

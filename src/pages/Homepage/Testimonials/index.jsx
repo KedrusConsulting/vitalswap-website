@@ -6,6 +6,7 @@ import user_3 from "../../../assets/user-3.png";
 import user_4 from "../../../assets/user-4.png";
 import user_5 from "../../../assets/user-5.png";
 import user_6 from "../../../assets/user-6.png";
+import user_7 from "../../../assets/user-7.png";
 import TestimonialCard from "../../../components/TestimonialCard";
 
 function Testimonials() {
@@ -37,10 +38,10 @@ function Testimonials() {
           />
 
           <TestimonialCard
-            userName={"Justin Tochukwu"}
-            imageUrl={user_3}
+            userName={"Oluhadey Adey"}
+            imageUrl={user_7}
             rating={5}
-            review="Amazing experience, my transaction was seamless, when I initiated a transfer from my wallet my bank wqs creditd in seconds, kudos."
+            review="The App is easy to use, transactions are fast, and the cutomer support is great. I can finally authorize zelle transfers and pay Copart and Ghanem."
           />
 
           <TestimonialCard
