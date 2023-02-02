@@ -5,8 +5,10 @@ import user_2 from "../../../assets/user-2.png";
 import user_3 from "../../../assets/user-3.png";
 import user_4 from "../../../assets/user-4.png";
 import user_5 from "../../../assets/user-5.png";
-import user_6 from "../../../assets/user-6.png";
+// import user_6 from "../../../assets/user-6.png";
 import user_7 from "../../../assets/user-7.png";
+import user_8 from "../../../assets/user-8.png";
+
 import TestimonialCard from "../../../components/TestimonialCard";
 
 function Testimonials() {
@@ -39,7 +41,7 @@ function Testimonials() {
 
           <TestimonialCard
             userName={"Oluhadey Adey"}
-            imageUrl={user_7}
+            imageUrl={user_8}
             rating={5}
             review="The App is easy to use, transactions are fast, and the cutomer support is great. I can finally authorize zelle transfers and pay Copart and Ghanem."
           />
@@ -59,10 +61,10 @@ function Testimonials() {
           />
 
           <TestimonialCard
-            userName={"Ebenezer Ogunmola"}
-            imageUrl={user_6}
+            userName={"Afolasade Ola"}
+            imageUrl={user_7}
             rating={5}
-            review="I was impressed with how efficient and fast this app is in buying naira or dollars. I give it a 5 star."
+            review="I was referred to this app to make a payment. Customer relation was great and the process was credible."
           />
         </div>
       </div>
