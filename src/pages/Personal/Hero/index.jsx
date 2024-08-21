@@ -11,7 +11,16 @@ import zelle from "../../../assets/Group@2x.png";
 import vouched from "../../../assets/vouched_logo_hi_res 1@2x.png";
 import plaid from "../../../assets/plaid-logo-horizontal-RGB 1@2x.png";
 
-import { HeroSlide1, HeroSlide2, HeroSlide3, HeroSlide4 } from "./HeroSlide";
+import batesGroupLogo from "../../../assets/batesgroup-logo.png";
+import dojahLogo from "../../../assets/dojah.png";
+import elevateVenturesLogo from "../../../assets/elevate-ventures.png";
+import beNimbleCoLogo from "../../../assets/be-nimble-co.png";
+import googleLogo from "../../../assets/google.png";
+import awsLogo from "../../../assets/aws.png";
+import slackLogo from "../../../assets/slack.png";
+import safeHeavenLogo from "../../../assets/safe-haven-mfb.png";
+
+import { HeroSlide1, HeroSlide2, HeroSlide3 } from "./HeroSlide";
 
 function Hero() {
   return (
@@ -45,11 +54,6 @@ function Hero() {
                 <HeroSlide3 />
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className="hero__slide">
-                <HeroSlide4 />
-              </div>
-            </SwiperSlide>
           </Swiper>
         </div>
       </div>
@@ -60,13 +64,28 @@ function Hero() {
         <div className="powered-by-logos">
           <img
             className="powered-by-logo"
-            src={flutterwave}
-            alt="Flutterwave Logo"
+            src={batesGroupLogo}
+            alt="Bates group Logo"
           />
-          <img className="powered-by-logo" src={plaid} alt="Plaid Logo" />
-          <img className="powered-by-logo" src={vouched} alt="Vouched Logo" />
-          <img className="powered-by-logo" src={cash_app} alt="CashApp Logo" />
-          <img className="powered-by-logo" src={zelle} alt="Zelle Logo" />
+          <img className="powered-by-logo" src={dojahLogo} alt="Dojah Logo" />
+          <img
+            className="powered-by-logo"
+            src={elevateVenturesLogo}
+            alt="Elevate Ventures Logo"
+          />
+          <img
+            className="powered-by-logo"
+            src={beNimbleCoLogo}
+            alt="Be Nimble Co Logo"
+          />
+          <img className="powered-by-logo" src={googleLogo} alt="Google Logo" />
+          <img className="powered-by-logo" src={awsLogo} alt="AWS Logo" />
+          <img className="powered-by-logo" src={slackLogo} alt="Slack Logo" />
+          <img
+            className="powered-by-logo"
+            src={safeHeavenLogo}
+            alt="Safe Heaven Logo"
+          />
         </div>
       </div>
     </div>

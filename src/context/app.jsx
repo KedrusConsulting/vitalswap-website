@@ -22,7 +22,7 @@ const AppProvider = ({ children }) => {
         setFaqs(faq);
         setFeaturedBlogs(featuredBlogPosts);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
 

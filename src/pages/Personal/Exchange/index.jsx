@@ -19,6 +19,7 @@ function Exchange() {
       window.innerWidth <= "768" && setPosition(true);
     });
   }, []);
+
   return (
     <div className="exchange" id="rates">
       <div

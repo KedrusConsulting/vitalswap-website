@@ -76,6 +76,11 @@ h6 {
     line-height: 1.33;
     letter-spacing: -0.22px;
   }
+
+  &--md {
+    font-weight: 300;
+    color: var(--text-secondary);
+  }
 }
 
 .main--terms {

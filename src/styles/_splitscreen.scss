@@ -1,0 +1,12 @@
+.splitscreen {
+  display: flex;
+  gap: 2.4rem;
+
+  &__left {
+    flex-basis: calc(50% - 1.2rem);
+  }
+
+  &__right {
+    flex-basis: calc(50% - 1.2rem);
+  }
+}

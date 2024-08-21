@@ -46,8 +46,6 @@ function FAQ() {
           parent.querySelector(".faq__open").classList.remove("hidden");
           parent.querySelector(".faq__close").classList.add("hidden");
         }
-
-        // setOpen((prev) => !prev);
       }
     });
 
@@ -66,9 +64,12 @@ function FAQ() {
           className="faq__caption"
         >
           <h4 className="heading--caption">FAQs</h4>
-          <h2 className="heading--secondary">
-            We answered some of your questions
-          </h2>
+          <h2 className="heading--secondary">Frequently asked questions</h2>
+          <p className="text--md">
+            Everything you need to know about the product and billing. Can’t
+            find the answer you’re looking for? Please chat to our friendly
+            team.
+          </p>
         </div>
 
         <div
