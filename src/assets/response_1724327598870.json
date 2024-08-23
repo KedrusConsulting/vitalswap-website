@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "message": "Users retrieved successfully",
+  "data": {
+    "totalItems": 2,
+    "totalPages": 1,
+    "currentPage": 1,
+    "limit": 10,
+    "rows": [
+      {
+        "userId": "641092fa-1758-4083-927a-66dd1213792b",
+        "id": "USR-240822-1079",
+        "pushNotificationToken": null,
+        "isOnline": false,
+        "username": "FKay18",
+        "email": "whitegodkingsley@gmail.com",
+        "fullName": "Kay Foods",
+        "phoneNumber": "2347041150446",
+        "dateOfBirth": null,
+        "isVerified": {
+          "email": false,
+          "phoneNumber": false
+        },
+        "userRoles": [
+          {
+            "type": "Merchant"
+          }
+        ],
+        "userType": "Merchant",
+        "createType": "merchant-signup",
+        "company": "99a6cc43-6e45-4cb2-991b-22b1ed9e55d5",
+        "companyRole": "owner",
+        "companyDepartment": "management",
+        "address": null,
+        "state": null,
+        "lga": null,
+        "nationality": null,
+        "profileImage": null,
+        "isDeleted": false,
+        "deletedTime": null,
+        "isAcceptPending": false,
+        "createdAt": "2024-08-22T11:40:01.000Z",
+        "updatedAt": "2024-08-22T11:40:01.000Z"
+      },
+      {
+        "userId": "cfae5152-493b-4291-93ab-1e9d0d980017",
+        "id": "USR-240305-7240",
+        "pushNotificationToken": "f4KlMywGCc0GdDObMgTSuz:APA91bFv8CoP54GQQOq25s4O5CDG-925LfGstbT_iRqzd5dZlQbyRwFnkwCz4LCcf0K5qTpiWhDTOPpfY9080Dvrwls7AGY3c88jeUyOuSqkXgsgMGdkY6rnaaaxuUN4ZQBYXPpVVcJR",
+        "isOnline": false,
+        "username": "KWhitegod63",
+        "email": "whitegodkingsley@gmail.com",
+        "fullName": "Whitegod Kingsley",
+        "phoneNumber": "+2348034171092",
+        "dateOfBirth": null,
+        "isVerified": {
+          "email": true
+        },
+        "userRoles": null,
+        "userType": "Driver",
+        "createType": "driver-signup",
+        "company": null,
+        "companyRole": null,
+        "companyDepartment": null,
+        "address": null,
+        "state": null,
+        "lga": null,
+        "nationality": null,
+        "profileImage": "http://res.cloudinary.com/dyrvoq1jl/image/upload/v1723626155/profile-images/yfl6bulnf9qqgyougsnz.jpg",
+        "isDeleted": false,
+        "deletedTime": null,
+        "isAcceptPending": false,
+        "createdAt": "2024-03-05T05:45:15.000Z",
+        "updatedAt": "2024-08-22T11:34:16.000Z"
+      }
+    ],
+    "hasNextPage": false,
+    "hasPrevPage": false
+  }
+}

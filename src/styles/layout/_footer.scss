@@ -1,0 +1,115 @@
+.footer {
+  padding: 8rem 0;
+  color: #fff;
+  background-color: var(--vs-blue);
+
+  &__home {
+    @include respond(sm-phone) {
+      margin-top: -15vh;
+      position: relative;
+      z-index: 5;
+    }
+
+    @include respond(xs-phone) {
+      margin-top: -25vh;
+    }
+  }
+
+  &__logo {
+    @include respond(phone) {
+      max-width: 137px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 6.4rem;
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, min-content);
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    font-weight: 300;
+    margin-bottom: 4rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  a:link,
+  a:visited {
+    font-weight: 300;
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  &__useful-links {
+    display: flex;
+    justify-content: flex-start;
+
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+
+      @include respond(phone) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(phone) {
+      flex-direction: column;
+      margin-top: 6.4rem;
+    }
+  }
+
+  &__social-links {
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+
+  &__link {
+    @include respond(phone) {
+      margin-right: 0;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__about-us {
+    // @include respond(tablet) {
+    //   grid-row: 2 / 3;
+    // }
+  }
+
+  &__contact {
+    justify-self: end;
+
+    @include respond(phone) {
+      justify-self: start;
+    }
+
+    p {
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}

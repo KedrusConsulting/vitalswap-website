@@ -1,0 +1,73 @@
+/*************************************************
+ Get in touch Section
+*/
+
+.get-in-touch {
+  padding-bottom: 12rem;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 1.6rem;
+    background: hsl(210, 20%, 95%);
+    padding: 4.8rem 0;
+
+    .avatars {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.6rem;
+      height: 5.6rem;
+      flex-shrink: 0;
+
+      &--1 {
+        margin-right: -2rem;
+      }
+
+      &--2 {
+        margin-top: -1rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      &--3 {
+        margin-left: -2rem;
+      }
+
+      img {
+        border-radius: 200px;
+        border: 1.5px solid #fff;
+        background-color: #e0e0e0;
+      }
+    }
+
+    h4 {
+      color: #101828;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: #475467;
+      text-align: center;
+      font-weight: 400;
+      line-height: 2.8rem;
+    }
+
+    button {
+      width: fit-content;
+      margin-inline: auto;
+      background-color: #04396d;
+      color: #fff;
+    }
+  }
+}

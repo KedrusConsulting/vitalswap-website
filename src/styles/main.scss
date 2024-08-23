@@ -1,17 +1,21 @@
-@import "./variables";
-@import "./mixins";
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/typo";
 
-@import "./typo";
-@import "./layout";
-@import "./button";
-@import "./inputfield";
-@import "./navigation";
-@import "./rate-card";
-@import "./header";
-@import "./footer";
-@import "./currency";
-@import "./splitscreen";
+@import "./components/button";
+@import "./components/inputfield";
+@import "./components/rate-card";
+@import "./components/currency";
+@import "./components/get-in-touch";
 
-@import "./homepage";
-@import "./term";
-@import "./signup";
+@import "./layout/header";
+@import "./layout/navigation";
+@import "./layout/splitscreen";
+@import "./layout/grid";
+@import "./layout/footer";
+
+@import "./pages/homepage";
+@import "./pages/personal";
+@import "./pages/business";
+@import "./pages/term";
+@import "./pages/signup";
