@@ -1,0 +1,205 @@
+.vitalswap-biz {
+  padding: 9.6rem 0;
+  background-color: #f2f2f2;
+
+  &__caption {
+    text-align: center;
+    margin-bottom: 9.6rem;
+
+    h2 {
+      color: #000;
+      text-align: center;
+      font-size: 3.6rem;
+      font-weight: 600;
+      line-height: 4.4rem;
+      letter-spacing: -0.72px;
+    }
+
+    p {
+      color: #272727;
+      max-width: 69.6rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+.same-day-settlement,
+.protect-your-revenue,
+.local-currency-payment,
+.intuitive-dashboard,
+.free-api-integration {
+  h3 {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  p {
+    max-width: 45rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .btn {
+    padding-inline: 3.2rem;
+  }
+
+  .splitscreen__left,
+  .splitscreen__right {
+    align-self: center;
+  }
+}
+
+.same-day-settlement {
+  &__inner {
+    padding: 6.4rem 8rem;
+    border-radius: 0.4rem;
+    background: #1c50b4;
+    background-image: url("/src/assets/same-day-settlement-pattern.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    overflow: hidden;
+    margin-bottom: 8rem;
+  }
+
+  &__right {
+    position: relative;
+    height: 32rem;
+
+    img {
+      position: absolute;
+      top: -2rem;
+      transform: translateX(-4rem);
+    }
+  }
+}
+
+.summary {
+  position: absolute;
+  top: 25rem;
+  left: 2rem;
+  background-color: #fff;
+  width: 34.3rem;
+  flex-shrink: 0;
+
+  border-radius: 0.4rem;
+  border: 1px solid #ebeff2;
+  background: #f9fafb;
+
+  &__edit {
+    padding: 0.8rem;
+    border-bottom: 1px solid #e3e5eb91;
+    @include flex(space-between, center);
+  }
+
+  h4 {
+    color: #343947;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03px;
+    margin: 0;
+  }
+
+  a:link {
+    color: #0875e0;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 12px;
+    text-decoration-line: underline;
+  }
+
+  .desc {
+    color: var(--Black-300, #8f97ad);
+    font-size: 1rem;
+    line-height: 12px;
+  }
+
+  .amt {
+    color: #343947;
+    font-weight: 800;
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.03px;
+  }
+
+  &__estimated-rate,
+  &__service,
+  &__pay {
+    padding: 0.4rem 0.8rem;
+    @include flex(space-between, center);
+  }
+
+  &__pay {
+    padding-bottom: 0.8rem;
+  }
+}
+
+.protect-your-revenue {
+  &__inner {
+    padding: 14rem 8rem;
+    border-radius: 0.4rem;
+    background: #97a82a;
+    background-image: url("/src/assets/protect-your-revenue-img.png");
+    background-size: 60rem;
+    background-position: -1rem -5rem;
+    background-repeat: no-repeat;
+    margin-bottom: 8rem;
+
+    p {
+      max-width: 38rem;
+    }
+  }
+
+  &__left {
+    position: relative;
+
+    .rate__card {
+      top: 4rem;
+    }
+  }
+}
+
+.local-currency-payment {
+  &__inner {
+    border-radius: 0.4rem;
+    background: #147b75;
+    padding: 14rem 8rem;
+    margin-bottom: 8rem;
+
+    p {
+      max-width: 45rem;
+    }
+  }
+}
+
+.intuitive-dashboard {
+  &__inner {
+    border-radius: 0.4rem;
+    background: #000000;
+    padding: 14rem 8rem;
+    margin-bottom: 8rem;
+
+    h3,
+    p {
+      max-width: 40.3rem;
+    }
+  }
+}
+
+.free-api-integration {
+  &__inner {
+    border-radius: 0.4rem;
+    background: #ffffff;
+    padding: 16rem 8rem;
+
+    h3 {
+      color: #97a82a;
+    }
+
+    p {
+      max-width: 42.7rem;
+      color: #747474;
+    }
+  }
+}

@@ -86,7 +86,6 @@
     }
 
     span {
-      // display: inline-block;
       width: fit-content;
     }
 
@@ -98,8 +97,7 @@
   &__receive,
   &__send {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     gap: 2.4rem;
   }
 
@@ -132,7 +130,6 @@
   &__cta {
     display: flex;
     align-items: center;
-    // width: 20rem;
     gap: 1.2rem;
     background-color: #d9ebfe;
     padding: 1rem 1.2rem;

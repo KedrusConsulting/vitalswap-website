@@ -35,9 +35,7 @@ function Personal() {
           </div>
         </section>
         <Features />
-
         <StepsSection />
-
         <Testimonials />
         <FAQ />
         <GetInTouch />
