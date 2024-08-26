@@ -8,6 +8,7 @@ const HomePage = Loadable(lazy(() => import("./pages/HomePage")));
 const Business = Loadable(lazy(() => import("./pages/Business")));
 const Personal = Loadable(lazy(() => import("./pages/Personal")));
 const SignUp = Loadable(lazy(() => import("./pages/SignUp")));
+const SignIn = Loadable(lazy(() => import("./pages/SignIn")));
 const Terms = Loadable(lazy(() => import("./pages/Terms")));
 const Privacy = Loadable(lazy(() => import("./pages/Privacy")));
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/terms" element={<Terms />} />
         <Route exact path="/privacy" element={<Privacy />} />
         <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/signin" element={<SignIn />} />
       </Routes>
     </div>
   );

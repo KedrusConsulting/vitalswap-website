@@ -2,7 +2,7 @@ import React from "react";
 import SplitScreen from "../../../components/SplitScreen";
 
 import sameDaySettlementImg from "../../../assets/same-day-settlement-img.png";
-import RateCard from "../../../components/RateCard";
+import localCurrencyPayment from "../../../assets/local-currency-mockup.png";
 
 const VSBusiness = () => {
   return (
@@ -118,7 +118,7 @@ const VSBusiness = () => {
         <div className="container">
           <div className="local-currency-payment__inner">
             <SplitScreen>
-              <div className="local-current-payment__left">
+              <div className="local-currency-payment__left">
                 <h3>Local Currency Payments</h3>
                 <p>
                   Accept payments in your local currency, regardless of your
@@ -127,7 +127,21 @@ const VSBusiness = () => {
                 <button className="btn btn--primary">Sign Up</button>
               </div>
 
-              <div className="local-current-payment__right"></div>
+              <div className="local-currency-payment__right">
+                <img
+                  src={localCurrencyPayment}
+                  alt="Local current payment mockup"
+                />
+
+                <div className="wallet-card">
+                  <div className="wallet-card__dollar">
+                    <span>USD Wallet</span>
+                    <span>$10,000</span>
+                  </div>
+
+                  <button className="wallet-card__btn">Manage</button>
+                </div>
+              </div>
             </SplitScreen>
           </div>
         </div>

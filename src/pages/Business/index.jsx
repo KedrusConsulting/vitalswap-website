@@ -5,12 +5,15 @@ import FAQ from "../../components/FAQ";
 import GetInTouch from "../../components/GetInTouch";
 import PoweredBy from "../../components/PoweredBy";
 import VSBusiness from "./VSBusiness";
+import Hero from "./Hero";
 
 const Business = () => {
   return (
     <>
       <header className="header header--business">
         <Navigation />
+
+        <Hero />
       </header>
 
       <main className="main">
