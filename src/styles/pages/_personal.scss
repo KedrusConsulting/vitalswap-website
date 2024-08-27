@@ -211,6 +211,13 @@
     }
   }
 
+  &__inner {
+    padding: 4.8rem;
+    border-radius: 2.4rem;
+    background: #fff;
+    box-shadow: 0px 21px 75.6px 0px #deefff;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 1fr 1fr;

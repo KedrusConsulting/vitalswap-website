@@ -32,13 +32,11 @@ function Marketplace() {
             data-aos-duration="2000"
             className="marketplace__text-box"
           >
-            <h3 className="heading--tertiary">
-              One Stop Marketplace for your Best rate.
-            </h3>
+            <h3 className="heading--tertiary">It is easier in the app.</h3>
 
             <p>
               Send money to friends and family. Make payments to merchants
-              across borders.
+              accross borders.
             </p>
 
             <div className="hero__cta">

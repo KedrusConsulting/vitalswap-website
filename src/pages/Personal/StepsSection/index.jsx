@@ -92,9 +92,6 @@ function StepsSection() {
         cur = 0;
       }
 
-      // console.log("**********");
-      // console.log(cur);
-
       stepsCard[cur].classList.add("steps__card--active");
       stepsImg[cur].classList.add("steps__img--active");
     }, 4000);
@@ -103,127 +100,129 @@ function StepsSection() {
   return (
     <section className="steps__section" id="how-it-works">
       <div className="container">
-        <div
-          data-aos="fade-up"
-          data-aos-duration="2000"
-          className="steps__caption"
-        >
-          <h2 className="heading--secondary">
-            Send money to friends and family in 3 simple steps.
-          </h2>
-        </div>
-
-        <div
-          className="steps__container"
-          onClick={handleSteps}
-          ref={cardsContainerRef}
-        >
-          <div className="steps__text-box">
-            <div
-              data-card="0"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__card steps__card--active"
-            >
-              <h4 className="heading--quad">
-                1. Enter amount you wish to send
-              </h4>
-              <p>
-                Once you sign up, add an amount you want to send, and hit the
-                EasySend button.
-              </p>
-            </div>
-
-            <div
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__img--mob steps__img--1"
-              data-mob="0"
-            >
-              <img
-                src={enter_amount_screen}
-                alt="Vitalswap send money app screen"
-              />
-            </div>
-
-            <div
-              data-card="1"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__card"
-            >
-              <h4 className="heading--quad">
-                2. Choose a destination currency
-              </h4>
-              <p>
-                Select the destination currency, and VitalSwap EasySend will
-                help you select the best rates in the market.
-              </p>
-            </div>
-
-            <div
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__img--mob steps__img--2"
-              data-mob="1"
-            >
-              <img
-                src={destination_currency_screen}
-                alt="Vitalswap send money app screen"
-              />
-            </div>
-
-            <div
-              data-card="2"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__card"
-            >
-              <h4 className="heading--quad">3. Send to recipients</h4>
-              <p>
-                Select send to yourself or someone else and funds will be
-                delivered in seconds.
-              </p>
-            </div>
-
-            <div
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="steps__img--mob steps__img--3"
-              data-mob="2"
-            >
-              <img
-                src={sendto_recip_screen}
-                alt="Vitalswap send money app screen"
-              />
-            </div>
-          </div>
+        <div className="steps__inner">
           <div
-            ref={imgsContainerRef}
-            data-aos="fade-left"
-            data-aos-delay="500"
-            data-aos-duration="1000"
-            className="steps__img-box"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="steps__caption"
           >
-            <div className="steps__img--1 steps__img--active" data-img="0">
-              <img
-                src={enter_amount_screen}
-                alt="Vitalswap send money app screen"
-              />
-            </div>
+            <h2 className="heading--secondary">
+              Making payments has never been this easy.
+            </h2>
+          </div>
 
-            <div className="steps__img--2" data-img="1">
-              <img
-                src={destination_currency_screen}
-                alt="Vitalswap destination currency app screen"
-              />
-            </div>
+          <div
+            className="steps__container"
+            onClick={handleSteps}
+            ref={cardsContainerRef}
+          >
+            <div className="steps__text-box">
+              <div
+                data-card="0"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__card steps__card--active"
+              >
+                <h4 className="heading--quad">
+                  1. Enter amount you wish to send
+                </h4>
+                <p>
+                  Once you sign up, add an amount you want to send, and hit the
+                  EasySend button.
+                </p>
+              </div>
 
-            <div className="steps__img--3" data-img="2">
-              <img
-                src={sendto_recip_screen}
-                alt="Vitalswap send to recipient app screen"
-              />
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__img--mob steps__img--1"
+                data-mob="0"
+              >
+                <img
+                  src={enter_amount_screen}
+                  alt="Vitalswap send money app screen"
+                />
+              </div>
+
+              <div
+                data-card="1"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__card"
+              >
+                <h4 className="heading--quad">
+                  2. Choose a destination currency
+                </h4>
+                <p>
+                  Select the destination currency, and VitalSwap EasySend will
+                  help you select the best rates in the market.
+                </p>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__img--mob steps__img--2"
+                data-mob="1"
+              >
+                <img
+                  src={destination_currency_screen}
+                  alt="Vitalswap send money app screen"
+                />
+              </div>
+
+              <div
+                data-card="2"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__card"
+              >
+                <h4 className="heading--quad">3. Send to recipients</h4>
+                <p>
+                  Select send to yourself or someone else and funds will be
+                  delivered in seconds.
+                </p>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                className="steps__img--mob steps__img--3"
+                data-mob="2"
+              >
+                <img
+                  src={sendto_recip_screen}
+                  alt="Vitalswap send money app screen"
+                />
+              </div>
+            </div>
+            <div
+              ref={imgsContainerRef}
+              data-aos="fade-left"
+              data-aos-delay="500"
+              data-aos-duration="1000"
+              className="steps__img-box"
+            >
+              <div className="steps__img--1 steps__img--active" data-img="0">
+                <img
+                  src={enter_amount_screen}
+                  alt="Vitalswap send money app screen"
+                />
+              </div>
+
+              <div className="steps__img--2" data-img="1">
+                <img
+                  src={destination_currency_screen}
+                  alt="Vitalswap destination currency app screen"
+                />
+              </div>
+
+              <div className="steps__img--3" data-img="2">
+                <img
+                  src={sendto_recip_screen}
+                  alt="Vitalswap send to recipient app screen"
+                />
+              </div>
             </div>
           </div>
         </div>
