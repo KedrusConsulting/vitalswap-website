@@ -21,7 +21,7 @@
     text-transform: uppercase;
     color: var(--text-secondary);
 
-    @include respond(tablet) {
+    @include respond(md-laptop) {
       max-width: fit-content;
       margin: 0 auto 1.6rem;
     }
@@ -37,7 +37,7 @@
   &__logos {
     @include flex(space-between, center);
 
-    @include respond(tablet) {
+    @include respond(md-laptop) {
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -58,7 +58,7 @@
   }
 
   &__logo {
-    width: 12rem;
+    width: 10rem;
     height: 4rem;
     object-fit: contain;
 

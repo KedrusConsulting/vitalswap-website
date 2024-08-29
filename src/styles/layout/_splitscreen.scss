@@ -2,6 +2,10 @@
   display: flex;
   gap: 2.4rem;
 
+  @include respond(tablet) {
+    flex-direction: column;
+  }
+
   &__left {
     flex-basis: calc(50% - 1.2rem);
   }

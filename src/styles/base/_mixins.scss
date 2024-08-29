@@ -68,4 +68,10 @@
       @content;
     }
   }
+
+  @if ($bp == big-desktop) {
+    @media only screen and (min-width: 81.25em) {
+      @content;
+    }
+  }
 }

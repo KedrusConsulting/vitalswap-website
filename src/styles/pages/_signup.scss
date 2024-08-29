@@ -9,13 +9,34 @@
     border-radius: 1.6rem;
     background: #04396d;
     color: #fff;
+    max-width: 75rem;
 
     padding: 6.4rem;
+
+    @include respond(md-laptop) {
+      padding: 4.8rem;
+    }
+
+    @include respond(lg-tablet) {
+      flex-basis: calc(50% - (2.4rem / 2));
+    }
+
+    @media only screen and (max-width: 800px) {
+      display: none;
+    }
   }
 
   &__right {
     @include flex(center, center);
     flex-basis: calc(60% - (2.4rem / 2));
+
+    @include respond(lg-tablet) {
+      flex-basis: calc(50% - (2.4rem / 2));
+    }
+
+    @media only screen and (max-width: 800px) {
+      flex-basis: calc(100%);
+    }
   }
 
   &__content {
@@ -29,7 +50,7 @@
   }
 
   &__title {
-    font-size: 6rem;
+    font-size: clamp(4.8rem, 3vw, 6rem);
     font-weight: 600;
     line-height: 110%;
     letter-spacing: -1.2px;
@@ -74,6 +95,19 @@
     flex-direction: column;
     width: 50%;
     margin-inline: auto;
+
+    @include respond(lg-tablet) {
+      width: 70%;
+    }
+
+    @include respond(tablet) {
+      width: 90%;
+    }
+
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      max-width: 50rem;
+    }
 
     & > * {
       &:not(:last-child) {

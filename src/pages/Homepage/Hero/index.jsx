@@ -17,6 +17,7 @@ const Hero = () => {
               <button className="btn btn--primary">
                 Get a business account
               </button>
+
               <button className="btn btn--white">Get a personal account</button>
             </div>
           </div>
