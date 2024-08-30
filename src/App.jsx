@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import Loadable from "./components/Loadable";
 
-const HomePage = Loadable(lazy(() => import("./pages/HomePage")));
+const HomePage = Loadable(lazy(() => import("./pages/Home")));
 const Business = Loadable(lazy(() => import("./pages/Business")));
 const Personal = Loadable(lazy(() => import("./pages/Personal")));
 const SignUp = Loadable(lazy(() => import("./pages/SignUp")));
