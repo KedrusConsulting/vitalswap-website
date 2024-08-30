@@ -4,13 +4,22 @@
 
   @include respond(tablet) {
     flex-direction: column;
+    gap: 4rem;
   }
 
   &__left {
     flex-basis: calc(50% - 1.2rem);
+
+    @include respond(tablet) {
+      flex-basis: calc(100%);
+    }
   }
 
   &__right {
     flex-basis: calc(50% - 1.2rem);
+
+    @include respond(tablet) {
+      flex-basis: calc(100%);
+    }
   }
 }

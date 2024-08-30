@@ -14,6 +14,10 @@
     background: hsl(210, 20%, 95%);
     padding: 4.8rem 0;
 
+    @include respond(tablet) {
+      padding: 4.8rem 1.2rem;
+    }
+
     .avatars {
       @include flex(center, center);
     }
@@ -57,6 +61,10 @@
       text-align: center;
       font-weight: 400;
       line-height: 2.8rem;
+
+      @include respond(tablet) {
+        font-size: 1.6rem;
+      }
     }
 
     button {
