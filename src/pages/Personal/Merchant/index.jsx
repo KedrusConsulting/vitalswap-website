@@ -1,8 +1,8 @@
 import React from "react";
 import SplitScreen from "../../../components/SplitScreen";
-import openDollarAccountImg from "../../../assets/open-dollar-account-mockup.png";
-import manageWalletimg from "../../../assets/manage-wallet-mockup.png";
-import globalPaymentImg from "../../../assets/global-payment-mockup.png";
+import openDollarAccountImg from "../../../assets/open-dollar-account-mockup.webp";
+import manageWalletimg from "../../../assets/manage-wallet-mockup.webp";
+import globalPaymentImg from "../../../assets/global-payment-mockup.webp";
 
 const Merchant = () => {
   return (

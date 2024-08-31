@@ -18,6 +18,10 @@
     background-position: right top;
     background-repeat: no-repeat;
 
+    @include respond(phone) {
+      background-size: 55rem;
+    }
+
     overflow: hidden;
 
     .navbar__link {

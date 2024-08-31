@@ -1,8 +1,8 @@
 import React from "react";
 import SplitScreen from "../../../components/SplitScreen";
 
-import sameDaySettlementImg from "../../../assets/same-day-settlement-img.png";
-import localCurrencyPayment from "../../../assets/local-currency-mockup.png";
+import sameDaySettlementImg from "../../../assets/same-day-settlement-img.webp";
+import localCurrencyPayment from "../../../assets/local-currency-mockup.webp";
 
 const VSBusiness = () => {
   return (
