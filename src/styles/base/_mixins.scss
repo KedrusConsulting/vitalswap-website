@@ -12,6 +12,10 @@
   -webkit-box-orient: vertical;
 }
 
+@mixin animate($name, $delay) {
+  animation: $name 1000ms $delay ease-in-out backwards;
+}
+
 @mixin respond($bp) {
   @if ($bp == xs-phone) {
     @media only screen and (max-width: 20em) {

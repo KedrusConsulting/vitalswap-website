@@ -571,6 +571,8 @@
       right: 0 !important;
       left: initial;
 
+      @include animate(fade, 2500ms);
+
       @include respond(md-phone) {
         transform: scale(0.5);
         bottom: 6rem;
@@ -587,6 +589,8 @@
       right: 15rem;
       top: initial;
       left: initial;
+
+      @include animate(fade, 2500ms);
 
       @include respond(md-phone) {
         transform: scale(0.6);

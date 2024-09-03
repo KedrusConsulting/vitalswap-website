@@ -7,24 +7,43 @@ const Hero = () => {
       <div className="container">
         <div className="hero__inner">
           <div className="hero__content">
-            <h1 className="heading heading--primary">
+            <h1 data-aos="fade-up" className="heading heading--primary">
               Borderless payments at your convenience
             </h1>
 
-            <p>Pay Anyone, Anywhere in the World, in few Clicks.</p>
+            <p data-aos="fade-up" data-aos-delay="500">
+              Pay Anyone, Anywhere in the World, in few Clicks.
+            </p>
 
             <div className="hero__ctas">
-              <button className="btn btn--primary">
+              <button
+                data-aos="fade-up"
+                data-aos-delay="1000"
+                className="btn btn--primary"
+              >
                 Get a business account
               </button>
 
-              <button className="btn btn--white">Get a personal account</button>
+              <button
+                data-aos="fade-up"
+                data-aos-delay="1000"
+                className="btn btn--white"
+              >
+                Get a personal account
+              </button>
             </div>
           </div>
 
           <div className="hero__img hero__img--home">
             <div className="layer-glow "></div>
-            <img className="img-main" src={heroImg} alt="pattern" />
+            <img
+              data-aos="fade-left"
+              data-aos-offset="-100"
+              data-aos-delay="1000"
+              className="img-main"
+              src={heroImg}
+              alt="pattern"
+            />
 
             <div className="rate__card">
               <div className="rate__send">

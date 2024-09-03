@@ -13,9 +13,12 @@ const Terms = Loadable(lazy(() => import("./pages/Terms")));
 const Privacy = Loadable(lazy(() => import("./pages/Privacy")));
 
 function App() {
-  //useEffect
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 1500,
+      easing: "ease-in-out",
+    });
+
     AOS.refresh();
   }, []);
 
