@@ -7,6 +7,8 @@ import PoweredBy from "../../components/PoweredBy";
 import VSBusiness from "./VSBusiness";
 import Hero from "./Hero";
 
+import { faqDataBusiness } from "../../components/FAQ/faqData";
+
 const Business = () => {
   return (
     <>
@@ -23,7 +25,7 @@ const Business = () => {
 
         <VSBusiness />
 
-        <FAQ />
+        <FAQ data={faqDataBusiness} />
         <GetInTouch />
         <Footer />
       </main>

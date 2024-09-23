@@ -22,13 +22,11 @@ function Exchange() {
 
   return (
     <div className="exchange" id="rates">
-      <div
-        data-aos="fade-up"
-        data-aos-duration="2000"
-        className="exchange__text-box"
-      >
-        <h2 className="heading--secondary">Get the best exchange rates</h2>
-        <p>Enjoy the best rates from the marketplace.</p>
+      <div className="exchange__text-box">
+        <h2 data-aos="fade-up" className="heading--secondary">
+          Get the best exchange rates
+        </h2>
+        <p data-aos="fade-up">Enjoy the best rates from the marketplace.</p>
 
         <div className="form_box-mob">
           <Formik initialValues={initialValues}>
@@ -41,6 +39,7 @@ function Exchange() {
         </div>
 
         <a
+          data-aos="fade-up"
           href="https://vitalswap.com/download.html"
           className="btn btn--primary mt-4"
         >

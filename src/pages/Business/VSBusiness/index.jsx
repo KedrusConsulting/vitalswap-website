@@ -8,8 +8,8 @@ const VSBusiness = () => {
   return (
     <section className="vitalswap-biz">
       <div className="vitalswap-biz__caption">
-        <h2>VitalSwap for Business</h2>
-        <p>
+        <h2 data-aos="fade-up">VitalSwap for Business</h2>
+        <p data-aos="fade-up">
           Easily accept payments from your African customers without worrying
           about chargeback fraud or high debit card fees. Integrate our checkout
           seamlessly with just 5 lines of code.
@@ -21,17 +21,19 @@ const VSBusiness = () => {
           <div className="same-day-settlement__inner">
             <SplitScreen>
               <div className="same-day-settlement__left">
-                <h3>Same-Day Settlement</h3>
-                <p>
+                <h3 data-aos="fade-right">Same-Day Settlement</h3>
+                <p data-aos="fade-right">
                   Receive funds on the same day of transaction completion,
                   ensuring quick access to your money for seamless business
                   operations.
                 </p>
 
-                <button className="btn btn--primary">Sign Up</button>
+                <button data-aos="fade-right" className="btn btn--primary">
+                  Sign Up
+                </button>
               </div>
 
-              <div className="same-day-settlement__right">
+              <div className="same-day-settlement__right" data-aos="fade-left">
                 <img
                   src={sameDaySettlementImg}
                   alt="Lady smiling while looking at her phone"
@@ -101,13 +103,15 @@ const VSBusiness = () => {
               </div>
 
               <div className="protect-your-revenue__right">
-                <h3>Protect Your Revenue</h3>
-                <p>
+                <h3 data-aos="fade-left">Revenue Protection</h3>
+                <p data-aos="fade-left">
                   Protect your business from chargeback fraud and currency
                   fluctuations, and keep your revenue secure with VitalSwap.
                 </p>
 
-                <button className="btn btn--primary">Sign Up</button>
+                <button className="btn btn--primary" data-aos="fade-left">
+                  Sign Up
+                </button>
               </div>
             </SplitScreen>
           </div>
@@ -119,15 +123,20 @@ const VSBusiness = () => {
           <div className="local-currency-payment__inner">
             <SplitScreen>
               <div className="local-currency-payment__left">
-                <h3>Local Currency Payments</h3>
-                <p>
+                <h3 data-aos="fade-right">Local Currency Payments</h3>
+                <p data-aos="fade-right">
                   Accept payments in your local currency, regardless of your
                   customers' currency.
                 </p>
-                <button className="btn btn--primary">Sign Up</button>
+                <button data-aos="fade-right" className="btn btn--primary">
+                  Sign Up
+                </button>
               </div>
 
-              <div className="local-currency-payment__right">
+              <div
+                className="local-currency-payment__right"
+                data-aos="fade-left"
+              >
                 <img
                   src={localCurrencyPayment}
                   alt="Local current payment mockup"
@@ -152,12 +161,16 @@ const VSBusiness = () => {
           <div className="intuitive-dashboard__inner">
             <SplitScreen>
               <div className="intuitive-dashboard__left">
-                <h3>Intuitive Dashboard and Daily Payouts</h3>
-                <p>
+                <h3 data-aos="fade-right">
+                  Intuitive Dashboard and Daily Payouts
+                </h3>
+                <p data-aos="fade-right">
                   Monitor transactions with ease using our intuitive dashboard
                   and receive daily payouts to your bank account.
                 </p>
-                <button className="btn btn--primary">Sign Up</button>
+                <button data-aos="fade-right" className="btn btn--primary">
+                  Sign Up
+                </button>
               </div>
 
               <div className="intuitive-dashboard__right"></div>
@@ -171,12 +184,14 @@ const VSBusiness = () => {
           <div className="free-api-integration__inner">
             <SplitScreen>
               <div className="free-api-integration__left">
-                <h3>Free API Integration</h3>
-                <p>
+                <h3 data-aos="fade-right">Free API Integration</h3>
+                <p data-aos="fade-right">
                   Embed our free API to your checkout process with five lines of
                   code to enjoy secure and seamless transactions.
                 </p>
-                <button className="btn btn--primary">Sign Up</button>
+                <button data-aos="fade-right" className="btn btn--primary">
+                  Sign Up
+                </button>
               </div>
 
               <div className="free-api-integration__right"></div>

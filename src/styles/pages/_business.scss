@@ -216,6 +216,8 @@
     background-repeat: no-repeat;
     margin-bottom: 8rem;
 
+    // @include animate(moveProtectRevenueBackgroundRight, 200ms);
+
     @include respond(tablet) {
       padding: 4rem 2.4rem;
 
@@ -268,6 +270,8 @@
         left: -21rem !important;
         transform: scale(0.6);
       }
+
+      @include animate(fade, 200ms);
     }
   }
 }
@@ -419,7 +423,7 @@
     padding: 14rem 8rem;
     margin-bottom: 8rem;
 
-    background-image: url("/src/assets/dashboard-mockup.webp");
+    background-image: url("/src/assets/dashboard-init.webp");
     background-size: 65rem;
     background-position: 56rem 13rem;
     background-repeat: no-repeat;

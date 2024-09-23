@@ -6,10 +6,12 @@ import Navigation from "../../components/Navigation";
 
 import Hero from "./Hero";
 import GetInTouch from "../../components/GetInTouch";
+import FAQ from "../../components/FAQ";
 import Features from "./Features";
 
+import { faqDataPersonal } from "../../components/FAQ/faqData";
+
 const Blog = Loadable(lazy(() => import("./Blog")));
-const FAQ = Loadable(lazy(() => import("../../components/FAQ")));
 const Exchange = Loadable(lazy(() => import("./Exchange")));
 const Marketplace = Loadable(lazy(() => import("./Marketplace")));
 const StepsSection = Loadable(lazy(() => import("./StepsSection")));
@@ -37,7 +39,7 @@ function Personal() {
         <Features />
         <StepsSection />
         <Testimonials />
-        <FAQ />
+        <FAQ data={faqDataPersonal} />
         <GetInTouch />
         <Blog />
         <Marketplace />

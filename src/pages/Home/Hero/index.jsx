@@ -12,7 +12,7 @@ const Hero = () => {
             </h1>
 
             <p data-aos="fade-up" data-aos-delay="500">
-              Pay Anyone, Anywhere in the World, in few Clicks.
+              Pay Anyone, Anywhere in the World.
             </p>
 
             <div className="hero__ctas">

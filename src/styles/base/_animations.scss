@@ -7,3 +7,27 @@
     opacity: 1;
   }
 }
+
+@keyframes moveProtectRevenueBackgroundRight {
+  from {
+    opacity: 0;
+    background-position: 0 0;
+  }
+
+  to {
+    opacity: 1;
+    background-position: -1rem -5rem;
+  }
+}
+
+@keyframes moveDashboardBackgroundLeft {
+  from {
+    opacity: 0;
+    background-position: 0 0;
+  }
+
+  to {
+    opacity: 1;
+    background-position: -1rem -5rem;
+  }
+}

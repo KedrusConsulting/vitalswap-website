@@ -1,5 +1,5 @@
 import React from "react";
-import heroImg from "../../../assets/laptop-phone-mockup.webp";
+import heroImg from "../../../assets/laptop-phone-mocku.webp";
 
 const Hero = () => {
   return (
@@ -7,21 +7,37 @@ const Hero = () => {
       <div className="container">
         <div className="hero__inner">
           <div className="hero__content">
-            <h1 className="heading heading--primary">
+            <h1
+              className="heading heading--primary"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               Receive payments from African customers
             </h1>
-            <p>
+            <p data-aos="fade-up" data-aos-delay="600">
               VitalSwap for Business allows you Receive payments from Africa
               directly in your local currency.
             </p>
 
             <div className="hero__ctas">
-              <button className="btn btn--primary">Sign Up</button>
-              <button className="btn">Login</button>
+              <button
+                data-aos="fade-up"
+                data-aos-delay="900"
+                className="btn btn--primary"
+              >
+                Sign Up
+              </button>
+              <button data-aos="fade-up" data-aos-delay="900" className="btn">
+                Login
+              </button>
             </div>
           </div>
 
-          <div className="hero__img hero__img--business">
+          <div
+            className="hero__img hero__img--business"
+            data-aos="fade-left"
+            data-aos-delay="600"
+          >
             <img src={heroImg} alt="pattern" />
             <svg
               className="hero__svg"

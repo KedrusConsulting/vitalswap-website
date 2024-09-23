@@ -1,11 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import FAQCard from "../FAQCard";
-import { useApp } from "../../context/app";
 
-function FAQ() {
-  const { faqs } = useApp();
-
+function FAQ({ data }) {
   const [open, setOpen] = useState(false);
 
   const faqContainerRef = useRef();
@@ -77,7 +73,7 @@ function FAQ() {
           ref={faqContainerRef}
           onClick={() => setOpen((prev) => !prev)}
         >
-          {faqs?.map((faq) => (
+          {data?.map((faq) => (
             <FAQCard key={faq.id} title={faq.title} body={faq.content} />
           ))}
         </div>

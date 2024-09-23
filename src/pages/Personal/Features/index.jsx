@@ -1,4 +1,3 @@
-import React from "react";
 import payBillsIcon from "../../../assets/pay-bills-icon.svg";
 import airTimeIcon from "../../../assets/airtime-icon.svg";
 import dataIcon from "../../../assets/data-icon.svg";
@@ -39,14 +38,20 @@ const Features = () => {
       <div className="container">
         <div className="features__caption">
           <span>Features</span>
-          <h2>What else can you do with VitalSwap?</h2>
-          <p>Access services for day to day activities with ease</p>
+          <h2 data-aos="fade-up">What else can you do with VitalSwap?</h2>
+          <p data-aos="fade-up">
+            Access services for day to day activities with ease
+          </p>
         </div>
 
         <div className="features__grid">
           {features.map((feature) => {
             return (
-              <div className="features__card" key={feature.title}>
+              <div
+                className="features__card"
+                key={feature.title}
+                data-aos="fade-up"
+              >
                 <img src={feature.image_url} alt={feature.title} />
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>

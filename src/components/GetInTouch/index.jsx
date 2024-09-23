@@ -7,7 +7,7 @@ const GetInTouch = () => {
   return (
     <section className="get-in-touch">
       <div className="container">
-        <div className="get-in-touch__inner">
+        <div className="get-in-touch__inner" data-aos="fade-up">
           <div className="avatars">
             <div className="avatar avatar--1">
               <img src={userImg01} alt="User avatar" />

@@ -5,9 +5,9 @@ import user_2 from "../../../assets/user-2.png";
 import user_3 from "../../../assets/user-3.png";
 import user_4 from "../../../assets/user-4.png";
 import user_5 from "../../../assets/user-5.png";
-// import user_6 from "../../../assets/user-6.png";
 import user_7 from "../../../assets/user-7.png";
 import user_8 from "../../../assets/user-8.png";
+import user_9 from "../../../assets/user-9.png";
 
 import TestimonialCard from "../../../components/TestimonialCard";
 
@@ -34,7 +34,7 @@ function Testimonials() {
 
           <TestimonialCard
             userName={"Ehinola Kingsley"}
-            imageUrl={user_2}
+            imageUrl={user_9}
             rating={5}
             review="A very good app. Quick with transactions without delay. A very cheap charge rate compared to its rivals. Love it so much."
           />
