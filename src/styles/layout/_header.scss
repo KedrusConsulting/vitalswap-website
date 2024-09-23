@@ -418,7 +418,7 @@
 
     & > * {
       @include respond(phone) {
-        width: 60%;
+        width: 80%;
       }
 
       @include respond(md-phone) {
@@ -508,67 +508,24 @@
     }
   }
 
+  &__inner--home {
+    display: flex;
+    align-items: center;
+    padding: 7vh 0 30vh;
+  }
+
   &__img--home {
+    text-align: center;
+    position: relative;
+
     .img-main {
-      display: flex;
-      bottom: 0;
-      right: -15rem;
       width: 80%;
-      max-width: 65rem;
-      position: absolute;
-
-      @include respond(md-laptop) {
-        max-width: 75rem;
-        width: 56%;
-      }
-
-      @include respond(lg-tablet) {
-        width: 65%;
-      }
-
-      @include respond(tablet) {
-        width: 100%;
-        margin-inline-start: auto;
-        right: -20rem;
-        transform: scale(0.9);
-        position: relative;
-      }
-
-      @include respond(phone) {
-        transform: scale(1);
-        right: -18rem;
-      }
-
-      @include respond(md-phone) {
-        transform: scale(1.1);
-        right: -14rem;
-      }
-
-      @include respond(md-phone) {
-        right: -9rem;
-      }
-
-      @include respond(big-desktop) {
-        right: -16rem;
-        width: 70%;
-        max-width: 65rem;
-      }
-
-      @media only screen and (max-width: 1440px) and (max-height: 768px),
-        only screen and (min-width: 1440px) and (max-height: 768px),
-        only screen and (min-width: 1440px) {
-        right: -12rem;
-        max-width: 60rem;
-      }
-
-      @media only screen and (min-width: 1740px) {
-        max-width: 85rem;
-      }
+      margin: 5vh auto 0;
     }
 
     .rate__card {
       bottom: 7rem;
-      right: 0 !important;
+      right: 10rem !important;
       left: initial;
 
       @include animate(fade, 2500ms);
@@ -586,7 +543,7 @@
     .wallet-card {
       position: absolute;
       bottom: 2rem;
-      right: 15rem;
+      right: 23rem;
       top: initial;
       left: initial;
 

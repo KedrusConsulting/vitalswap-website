@@ -1,11 +1,11 @@
 import React from "react";
-import heroImg from "../../../assets/home-hero-img.webp";
+import heroImg from "../../../assets/hero-image-4@2x.webp";
 
 const Hero = () => {
   return (
     <div className="hero hero--home">
       <div className="container">
-        <div className="hero__inner">
+        <div className="hero__inner hero__inner--home">
           <div className="hero__content">
             <h1 data-aos="fade-up" className="heading heading--primary">
               Borderless payments at your convenience
