@@ -25,13 +25,14 @@ const Hero = () => {
                 Get a business account
               </a>
 
-              <button
+              <a
                 data-aos="fade-up"
                 data-aos-delay="1000"
                 className="btn btn--white"
+                href="https://personal-vitalswap.netlify.app"
               >
                 Get a personal account
-              </button>
+              </a>
             </div>
           </div>
 
