@@ -12,17 +12,18 @@ const Hero = () => {
             </h1>
 
             <p data-aos="fade-up" data-aos-delay="500">
-              Pay Anyone, Anywhere in the World.
+              Pay anyone, anywhere in the world.
             </p>
 
             <div className="hero__ctas">
-              <button
+              <a
                 data-aos="fade-up"
                 data-aos-delay="1000"
                 className="btn btn--primary"
+                href="https://business-vitalswap.netlify.app"
               >
                 Get a business account
-              </button>
+              </a>
 
               <button
                 data-aos="fade-up"
