@@ -35,7 +35,7 @@ function Navigation() {
             Download App
           </a>
 
-          {!open ? (
+          {/* {!open ? (
             <svg
               onClick={() => setOpen(true)}
               className="navbar__mobile"
@@ -69,7 +69,7 @@ function Navigation() {
                 strokeLinejoin="round"
               />
             </svg>
-          )}
+          )} */}
         </div>
       </div>
     </nav>
