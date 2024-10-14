@@ -409,22 +409,6 @@
     display: flex;
     align-items: center;
     gap: 1.6rem;
-
-    @include respond(phone) {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.2rem;
-    }
-
-    & > * {
-      @include respond(phone) {
-        width: 80%;
-      }
-
-      @include respond(md-phone) {
-        width: 100%;
-      }
-    }
   }
 
   &__img--business {
@@ -493,6 +477,12 @@
     display: flex;
     align-items: center;
 
+    margin-top: 10vh;
+
+    @include respond(tablet) {
+      margin-top: 4vh;
+    }
+
     .heading,
     p {
       color: #343947;
@@ -500,11 +490,29 @@
 
     .btn {
       padding: 1.6rem 2.4rem;
+
+      @include respond(sm-phone) {
+        padding: 1rem 1.6rem;
+        font-size: 1.2rem;
+      }
+
+      @media screen and (max-width: 372px) {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     .btn--white {
       background-color: #ffffff;
       color: #343947;
+    }
+
+    .hero__ctas {
+      @media screen and (max-width: 372px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
     }
   }
 
@@ -512,6 +520,14 @@
     display: flex;
     align-items: center;
     padding: 7vh 0 30vh;
+
+    @include respond(phone) {
+      padding: 0vh 0 10vh;
+    }
+
+    @include respond(sm-phone) {
+      padding: 0vh 0 5vh;
+    }
   }
 
   &__img--home {
@@ -519,14 +535,17 @@
     position: relative;
 
     .img-main {
+      position: relative;
       width: 80%;
       margin: 5vh auto 0;
+      z-index: 999;
     }
 
     .rate__card {
       bottom: 7rem;
       right: 10rem !important;
       left: initial;
+      z-index: 999;
 
       @include animate(fade, 2500ms);
 
@@ -535,8 +554,15 @@
         bottom: 6rem;
       }
 
+      @include respond(sm-phone) {
+        bottom: 2rem;
+        right: -2rem !important;
+      }
+
       @include respond(xs-phone) {
-        left: 0.2rem;
+        transform: scale(0.4);
+        left: -3.8rem;
+        bottom: 0;
       }
     }
 
@@ -546,6 +572,7 @@
       right: 23rem;
       top: initial;
       left: initial;
+      z-index: 999;
 
       @include animate(fade, 2500ms);
 
@@ -554,8 +581,15 @@
         right: 9rem;
       }
 
+      @include respond(sm-phone) {
+        bottom: 0rem;
+        right: 8rem;
+      }
+
       @include respond(xs-phone) {
+        transform: scale(0.5);
         right: 3rem;
+        bottom: -1rem;
       }
     }
   }

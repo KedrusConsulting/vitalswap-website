@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
 import NavLink from "../NavLink";
-
-import Hamburger from "hamburger-react";
+import getDownloadAppUrl from "../../utils/getDownloadAppUrl";
 
 function Navigation() {
   const [open, setOpen] = useState(false);
+  const downloadURL = getDownloadAppUrl();
 
   return (
     <nav className="nav">
@@ -28,8 +28,9 @@ function Navigation() {
           </ul>
 
           <a
-            href="https://vitalswap.com/download.html"
+            href={downloadURL}
             className="navbar__cta btn btn--primary"
+            target="_blank"
           >
             Download App
           </a>
