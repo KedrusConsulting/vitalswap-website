@@ -39,9 +39,18 @@
 html {
   // font-size: 10px;
   font-size: 62.5%; // 10px / 16px
+  background-color: var(--neutral-grey);
 
   @include respond(lg-tablet) {
     font-size: 56.25%;
+  }
+
+  @include respond(sm-phone) {
+    font-size: 54%;
+  }
+
+  @include respond(xs-phone) {
+    font-size: 43.75%;
   }
 }
 
@@ -51,7 +60,7 @@ body {
   font-weight: 400;
   line-height: 2.4rem;
   color: var(--text-primary);
-  background-color: var(--bg);
+  background-color: var(--neutral-grey);
 
   @include respond(phone) {
     font-size: 1.8rem;
