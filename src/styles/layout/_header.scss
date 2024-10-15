@@ -519,7 +519,7 @@
   &__inner--home {
     display: flex;
     align-items: center;
-    padding: 7vh 0 30vh;
+    padding: 0vh 0 30vh;
 
     @include respond(phone) {
       padding: 0vh 0 10vh;
