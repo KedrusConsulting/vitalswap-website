@@ -20,7 +20,7 @@ const Hero = () => {
                 data-aos="fade-up"
                 data-aos-delay="1000"
                 className="btn btn--primary"
-                href="https://business-vitalswap.netlify.app"
+                href={import.meta.env.VITE_VS_BUSINESS}
               >
                 Get a business account
               </a>
@@ -29,7 +29,7 @@ const Hero = () => {
                 data-aos="fade-up"
                 data-aos-delay="1000"
                 className="btn btn--white"
-                href="https://personal-vitalswap.netlify.app"
+                href={import.meta.env.VITE_VS_PERSONAL}
               >
                 Get a personal account
               </a>
