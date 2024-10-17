@@ -1,4 +1,4 @@
-import{j as n,L as Se,c as D,g as ve,r as xe,a as h,F as ge}from"./index-helbvsR8.js";const we="/assets/vitalswap-logo-DAMQ07VP.svg";function ye(){return n(Se,{className:"",to:"/",children:n("div",{className:"vitalswap-logo",children:n("img",{src:we,alt:"Vitalswap Logo"})})})}function P({route:g,label:E}){return n("li",{children:n("a",{href:g,className:"navbar__link",children:E})})}var G={exports:{}};/*!
+import{j as n,L as Se,c as D,g as ve,r as xe,a as h,F as ge}from"./index-CBtUdIjX.js";const we="/assets/vitalswap-logo-DAMQ07VP.svg";function ye(){return n(Se,{className:"",to:"/",children:n("div",{className:"vitalswap-logo",children:n("img",{src:we,alt:"Vitalswap Logo"})})})}function P({route:g,label:E}){return n("li",{children:n("a",{href:g,className:"navbar__link",children:E})})}var G={exports:{}};/*!
  * Platform.js v1.3.6
  * Copyright 2014-2020 Benjamin Tan
  * Copyright 2011-2013 John-David Dalton
