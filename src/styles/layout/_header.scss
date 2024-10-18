@@ -587,9 +587,9 @@
       }
 
       @include respond(xs-phone) {
-        transform: scale(0.5);
-        right: 3rem;
-        bottom: -1rem;
+        transform: scale(0.45);
+        right: 11rem;
+        bottom: -2rem;
       }
     }
   }
