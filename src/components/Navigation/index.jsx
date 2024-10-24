@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo";
 import NavLink from "../NavLink";
 import getDownloadAppUrl from "../../utils/getDownloadAppUrl";
@@ -6,6 +6,39 @@ import getDownloadAppUrl from "../../utils/getDownloadAppUrl";
 function Navigation() {
   const [open, setOpen] = useState(false);
   const downloadURL = getDownloadAppUrl();
+
+  useEffect(() => {
+    (function (d, w, c) {
+      w.BrevoConversationsID = "613fed0170e3861a7377a46a";
+      w[c] =
+        w[c] ||
+        function () {
+          (w[c].q = w[c].q || []).push(arguments);
+        };
+      var s = d.createElement("script");
+      s.async = true;
+      s.src = "https://conversations-widget.brevo.com/brevo-conversations.js";
+      if (d.head) d.head.appendChild(s);
+    })(document, window, "BrevoConversations");
+  }, []);
+
+  useEffect(() => {
+    window.BrevoConversationsSetup = {
+      customWidgetButton: ".custom-chat-button",
+      chatWidth: 400,
+      chatHeight: 550,
+    };
+  }, []);
+
+  const handleGetInTouch = (e) => {
+    e.preventDefault();
+
+    if (window.BrevoConversations) {
+      window.BrevoConversations("openChat", true);
+    } else {
+      console.log("Brevo Conversations widget is not loaded yet.");
+    }
+  };
 
   return (
     <nav className="nav">
@@ -20,16 +53,21 @@ function Navigation() {
             onClick={() => setOpen(false)}
           >
             <NavLink
-              route="https://vitalswap.com/blog/how-it-works"
+              route="https://blog.vitalswap.com/how-it-works"
               label="How it Works"
             />
             <NavLink
-              route="https://vitalswap.com/blog/vitalswap-rate/"
+              route="https://blog.vitalswap.com/vitalswap-rate/"
               label="Our Rates"
             />
-            <NavLink route="https://vitalswap.com/blog" label="Blog" />
-            <NavLink route="https://vitalswap.com/blog/faq/" label="FAQ" />
-            <NavLink route="#contact" label="Contact Us" />
+            <NavLink route="https://blog.vitalswap.com" label="Blog" />
+            <NavLink route="https://blog.vitalswap.com/faq/" label="FAQ" />
+
+            <NavLink
+              onClick={handleGetInTouch}
+              route="#contact"
+              label="Contact Us"
+            />
           </ul>
 
           <a
